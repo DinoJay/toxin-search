@@ -1,6 +1,4 @@
 <script>
-	import { claim_space } from 'svelte/internal';
-
 	export let data = [];
 	console.log('data', data);
 	const cols = data[0] ? Object.keys(data[0]) : [];

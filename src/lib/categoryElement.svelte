@@ -12,12 +12,10 @@
 
 <div class="ml-12">
 	{#each cats as c}
-		<div>
-			{#if typeof c.values === 'object'}
-				<AttrElement key={c.key} categories={c.values} />
-			{:else}
-				<StringElement key={c.key} value={c.values} />
-			{/if}
-		</div>
+		{#if typeof c.values === 'object'}
+			<AttrElement key={c.key} categories={c.values} />
+		{:else}
+			<StringElement key={c.key} value={c.values} />
+		{/if}
 	{/each}
 </div>
