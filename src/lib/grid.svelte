@@ -2,11 +2,25 @@
 	export let acuteToxicityCsv = [];
 	export let irritationCorosivityCsv = [];
 	export let repeatedToxicityCsv = [];
+	export let typeOfStudy;
+	export let guideline;
 	// import Table from '$lib/table.svelte';
-	import VerticalList from '$lib/verticalList.svelte';
+	import ElementList from './element-list/index.svelte';
+	import Thumbnails from '$lib/thumbnails/index.svelte';
 	$: {
 		console.log({ acuteToxicityCsv, irritationCorosivityCsv, repeatedToxicityCsv });
+		console.log('typeOfstudy', typeOfStudy);
+		console.log('guideline', guideline);
 	}
+
+	$: data = [...acuteToxicityCsv, ...irritationCorosivityCsv, ...repeatedToxicityCsv].map((d) => {
+		const values =
+			typeOfStudy !== null ? d.values.filter((e) => e.type_of_study === typeOfStudy) : d.values;
+		return {
+			...d,
+			values
+		};
+	});
 </script>
 
 <div class="m-3">
@@ -14,7 +28,7 @@
 		<h2 class="text-xl mb-1">Search:</h2>
 		<div class="flex h-96 ">
 			<div class=" sub-cont mr-2" style="">
-				<div class="placeholder">Thumbnails</div>
+				<Thumbnails />
 			</div>
 			<div class="sub-cont bg-contain" style="background-image:url('blockly.png')">
 				<div class="placeholder">Blockly</div>
@@ -24,7 +38,7 @@
 	<h2 class="text-xl mb-1">Results:</h2>
 	<div class="flex h-96">
 		<div class="sub-cont mr-2">
-			<VerticalList data={acuteToxicityCsv} />
+			<ElementList {data} />
 		</div>
 		<div class="sub-cont bg-contain" style="background-image:url('graph.png')">
 			<div class="placeholder">Visualisation</div>

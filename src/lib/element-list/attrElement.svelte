@@ -3,7 +3,7 @@
 	export let key;
 
 	const cats = Object.entries(categories).map(([key, values]) => ({ key, values }));
-	console.log('cats', cats);
+	// console.log('cats', cats);
 	let open = false;
 </script>
 

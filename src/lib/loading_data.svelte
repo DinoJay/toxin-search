@@ -1,8 +1,8 @@
 <script>
 	import { dsv } from 'd3-fetch';
+	import { v4 as uuidv4 } from 'uuid';
 	import Grid from '$lib/grid.svelte';
 	import { onMount } from 'svelte';
-	import { group } from 'd3-array';
 	// console.log('csv', csv);
 	import '../styles/tailwind.css';
 	import Filter from './filter.svelte';
@@ -160,28 +160,47 @@
 		});
 		return { ...obj };
 	};
+	const cleanDatum = (d) => {
+		const obj = cleanKeys(d);
+		const categories = getParentCategories(obj);
+		return { ...obj, categories };
+	};
+
 	let dataPromise = null;
+
 	onMount(() => {
-		const acuteToxicity = dsv(';', 'db_acute_toxicity.csv', (d) => {
-			const obj = cleanKeys(d);
-			const categories = getParentCategories(obj);
-			return { ...obj, categories };
-		}).then((data) => {
-			const groupedData = [...group(data, (d) => d.dossier)].map(([key, values]) => ({
-				key,
-				values
-			}));
+		const acuteToxicity = dsv(';', 'db_acute_toxicity.csv', cleanDatum);
 
-			console.log('groupedData', groupedData);
-			return groupedData;
-		});
-
-		const irritationCorosivity = dsv(';', 'db_irritation_corosivity.csv');
-		const repeatedToxicity = dsv(';', 'db_repeated_toxicity.csv');
-		dataPromise = Promise.all([acuteToxicity, irritationCorosivity, repeatedToxicity]);
+		const irritationCorosivity = dsv(';', 'db_irritation_corosivity.csv', cleanDatum);
+		const repeatedToxicity = dsv(';', 'db_repeated_toxicity.csv', cleanDatum);
+		dataPromise = Promise.all([acuteToxicity, irritationCorosivity, repeatedToxicity]).then(
+			([ac, irr, rep]) => [
+				ac.map((d, i) => ({
+					...d,
+					id: `${uuidv4()}-${i}-${d.dossier}`,
+					compound: d.dossier,
+					type: 'acute toxicity'
+				})),
+				irr.map((d, i) => ({
+					...d,
+					id: `${uuidv4()}-${ac.length + i}-${d.dossier}`,
+					compound: d.dossier,
+					type: 'irritation corosivity'
+				})),
+				rep.map((d, i) => ({
+					...d,
+					id: `${uuidv4()}-${ac.length + irr.length + i}-${d.dossier}`,
+					compound: d.dossier,
+					type: 'repeated toxicity'
+				}))
+			]
+		);
+		// .then((d, i) => ({ ...d, id: `${d.compound} ${i}` }));
 		console.log('dataPromises', dataPromise);
 	});
 	// const dataPromise = [];
+	let typeOfStudy = null;
+	let guideline = null;
 </script>
 
 <div />
@@ -191,8 +210,14 @@
 		{#await dataPromise}
 			<p>...waiting</p>
 		{:then [acuteToxicityCsv, irritationCorosivityCsv, repeatedToxicityCsv]}
-			<Filter />
-			<Grid {acuteToxicityCsv} {irritationCorosivityCsv} {repeatedToxicityCsv} />
+			<Filter bind:typeOfStudy bind:guideline />
+			<Grid
+				{typeOfStudy}
+				{guideline}
+				{acuteToxicityCsv}
+				{irritationCorosivityCsv}
+				{repeatedToxicityCsv}
+			/>
 		{:catch error}
 			<p class="text-red-600">{error.message}</p>
 		{/await}
