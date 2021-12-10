@@ -15,7 +15,7 @@
 		<label class="flex items-center  " for="type-of-study">
 			<span>Type of study:</span>
 			<button on:click={() => (typeOfStudyEnabled = !typeOfStudyEnabled)}>
-				<CloseIcon />
+				<CloseIcon color="#5684fd" />
 			</button>
 		</label>
 		<select
@@ -36,7 +36,7 @@
 		<label class="flex items-center" for="guideline">
 			<span class="mr-auto">Guideline:</span>
 			<button on:click={() => (guidelineEnabbled = !guidelineEnabbled)}>
-				<CloseIcon />
+				<CloseIcon color="#5684fd" />
 			</button>
 		</label>
 		<select

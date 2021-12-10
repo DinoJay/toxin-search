@@ -17,7 +17,7 @@
 	<div class="text-lg p-2 flex flex-col {!oralEnabled && 'opacity-50'}">
 		<label class="flex items-center" for="oral"
 			><span class="mr-auto">Oral:</span><button on:click={() => (oralEnabled = !oralEnabled)}
-				><CloseIcon /></button
+				><CloseIcon color="#5684fd" /></button
 			></label
 		>
 		<select disabled={!oralEnabled} class="border p-1" name="oral" id="oral">
@@ -30,7 +30,7 @@
 		<label class="flex items-center" for="patching-technique"
 			><span class="mr-auto">Patching Technique:</span>
 			<button on:click={() => (patchingTechniqueEnabled = !patchingTechniqueEnabled)}
-				><CloseIcon /></button
+				><CloseIcon color="#5684fd" /></button
 			>
 		</label>
 		<select

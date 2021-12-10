@@ -15,7 +15,7 @@
 	<div class="text-lg p-2 flex flex-col {!speciesEnabled && 'opacity-50'}">
 		<label class="flex items-center" for="species"
 			><span class="mr-auto">Species:</span><button
-				on:click={() => (speciesEnabled = !speciesEnabled)}><CloseIcon /></button
+				on:click={() => (speciesEnabled = !speciesEnabled)}><CloseIcon color="#5684fd" /></button
 			></label
 		>
 		<input disabled={!speciesEnabled} class="border p-1" name="species" id="species" />
@@ -24,7 +24,8 @@
 		<div class="text-lg p-2 flex flex-col {!targetOrganEnabled && 'opacity-50'}">
 			<label class="flex items-center" for="targetOrgan"
 				><span class="mr-auto">Target Organ:</span><button
-					on:click={() => (targetOrganEnabled = !targetOrganEnabled)}><CloseIcon /></button
+					on:click={() => (targetOrganEnabled = !targetOrganEnabled)}
+					><CloseIcon color="#5684fd" /></button
 				></label
 			>
 			<input
@@ -37,7 +38,8 @@
 		<div class="text-lg p-2 flex flex-col {!sexEnabled && 'opacity-50'}">
 			<label class="flex items-center" for="sex"
 				><span class="mr-auto">Sex:</span>
-				<button on:click={() => (sexEnabled = !sexEnabled)}><CloseIcon /></button></label
+				<button on:click={() => (sexEnabled = !sexEnabled)}><CloseIcon color="#5684fd" /></button
+				></label
 			>
 			<select disabled={!sexEnabled} class="border p-1" name="sex" id="type">
 				<option value="open">Female</option>

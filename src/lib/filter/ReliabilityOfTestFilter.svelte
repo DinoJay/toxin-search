@@ -20,7 +20,7 @@
 	<div class="text-lg p-2 flex flex-col justify-center {!yearEnabled && 'opacity-50'}">
 		<label class=" flex items-center" for="observation"
 			><span class="mr-auto">Year ({year[0]} - {year[1]}):</span><button
-				on:click={() => (yearEnabled = !yearEnabled)}><CloseIcon /></button
+				on:click={() => (yearEnabled = !yearEnabled)}><CloseIcon color="#5684fd" /></button
 			></label
 		>
 		<div class="w-40 {!yearEnabled && 'pointerEventsNone'}">
@@ -30,7 +30,8 @@
 	<div class="text-lg p-2 flex flex-col justify-center {!preliminaryStudyEnabled && 'opacity-50'}">
 		<label class=" flex items-center" for="observation"
 			><span class="mr-auto">Preliminary Study:</span><button
-				on:click={() => (preliminaryStudyEnabled = !preliminaryStudyEnabled)}><CloseIcon /></button
+				on:click={() => (preliminaryStudyEnabled = !preliminaryStudyEnabled)}
+				><CloseIcon color="#5684fd" /></button
 			></label
 		>
 		<input disabled={!preliminaryStudyEnabled} type="checkbox" class="form-checkbox" checked />

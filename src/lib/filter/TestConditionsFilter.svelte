@@ -26,7 +26,7 @@
 			<label class="mr-2 flex items-center" for="observation"
 				><span class="mr-auto">Observation period ({observationDays[0]} days):</span>
 				<button on:click={() => (observationPeriodEnabled = !observationPeriodEnabled)}
-					><CloseIcon /></button
+					><CloseIcon color="#5684fd" /></button
 				></label
 			>
 			<div class="w-40 {!observationPeriodEnabled && 'pointer-events-none'}">
@@ -36,7 +36,8 @@
 		<div class="text-lg p-2 flex justify-center flex-col {!exposureTimeEnabled && 'opacity-50'}">
 			<label class="mr-2 flex items-center" for="exposure-time"
 				><span class="mr-auto">Exposure time ({exposureTime[0]} hour(s)):</span><button
-					on:click={() => (exposureTimeEnabled = !exposureTimeEnabled)}><CloseIcon /></button
+					on:click={() => (exposureTimeEnabled = !exposureTimeEnabled)}
+					><CloseIcon color="#5684fd" /></button
 				></label
 			>
 			<div class="w-40 {!exposureTimeEnabled && 'pointer-events-none'}">
@@ -52,7 +53,7 @@
 			<label class="mr-2 flex items-center" for="vehicle-concentration"
 				><span class="mr-auto">Vehicle Concentration ({vehicleConcentration[0]}%):</span>
 				<button on:click={() => (vehicleConcentrationEnabled = !vehicleConcentrationEnabled)}
-					><CloseIcon /></button
+					><CloseIcon color={'#5684fd'} /></button
 				></label
 			>
 			<div class="w-40 {!vehicleConcentrationEnabled && 'pointer-events-none'}">
