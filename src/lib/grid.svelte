@@ -40,7 +40,7 @@
 		<div class="sub-cont mr-2">
 			<ElementList {data} />
 		</div>
-		<div class="sub-cont bg-contain" style="background-image:url('graph.png')">
+		<div class="sub-cont bg-contain" style="background-image:url('ontodia.png')">
 			<div class="placeholder">Visualisation</div>
 		</div>
 	</div>

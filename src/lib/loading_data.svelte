@@ -5,7 +5,7 @@
 	import { onMount } from 'svelte';
 	// console.log('csv', csv);
 	import '../styles/tailwind.css';
-	import Filter from './filter.svelte';
+	import Filter from './filter/index.svelte';
 
 	const MORIBOUND_OR_DEAD_ANIMALS_PRIOR_TO_STUDY_TERMINATION =
 		'moribound_or_dead_animals_prior_to_study_termination';
