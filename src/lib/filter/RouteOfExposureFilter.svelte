@@ -21,6 +21,7 @@
 			></label
 		>
 		<select disabled={!oralEnabled} class="border p-1" name="oral" id="oral">
+			<option value="all">All</option>
 			<option value="gavage">Gavage</option>
 			<option value="drink-water">Drink Water </option>
 			<option value="feed">Feed</option>
@@ -39,6 +40,7 @@
 			name="patching-technique"
 			id="type"
 		>
+			<option value="all">All</option>
 			<option value="open">Open</option>
 			<option value="semi-occluded">Semi-Occluded </option>
 			<option value="occluded">Occluded</option>

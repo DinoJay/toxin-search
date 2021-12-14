@@ -42,6 +42,7 @@
 				></label
 			>
 			<select disabled={!sexEnabled} class="border p-1" name="sex" id="type">
+				<option value="all">All</option>
 				<option value="open">Female</option>
 				<option value="semi-occluded">Male </option>
 			</select>

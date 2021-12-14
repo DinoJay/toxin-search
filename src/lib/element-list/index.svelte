@@ -4,6 +4,7 @@
 
 	import VerticalList from './verticalList.svelte';
 
+	export let type = 'all';
 	export let data;
 	let groupBy = 'compound';
 
@@ -16,7 +17,6 @@
 
 		return groupedData;
 	};
-	let type = 'all';
 	let grData = groupData(data, groupBy);
 	let offset = 10;
 	let numPages = Math.ceil(grData.length / offset);
@@ -60,14 +60,6 @@
 			checked={groupBy === 'guideline'}
 		/>
 		<label for="oecd">Guideline</label>
-		<label class="ml-6" for="cars">Type:</label>
-
-		<select class="ml-2 border p-1" name="type" id="type" bind:value={type}>
-			<option value="all">All</option>
-			<option value="acute toxicity">Acute Toxicity</option>
-			<option value="irritation corosivity">Irritation Corosivity</option>
-			<option value="repeated toxicity">Repeated Toxicity</option>
-		</select>
 	</form>
 	<VerticalList
 		className="flex-grow"
