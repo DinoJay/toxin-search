@@ -7,21 +7,31 @@
 	import TestSubstanceFilter from './TestSubstanceFilter.svelte';
 	import EndpointTypeFilter from './EndpointTypeFilter.svelte';
 	export let guideline = null;
+	import Tab from '$lib/Tab.svelte';
+	import HealthEffectFilter from './HealthEffectFilter.svelte';
+	import ChemicalCompoundFilter from './ChemicalCompoundFilter.svelte';
+	let tabOpen = 0;
 
 	// $: console.log('observation days', observationDays);
 </script>
 
 <div class="m-3">
 	<h2 class="text-xl mb-1">Filter:</h2>
-	<div class=" flex flex-wrap">
-		<EndpointTypeFilter />
-		<GeneralFilter />
-		<TestSubstanceFilter />
-		<TestSpeciesFilter />
-		<TestConditionsFilter />
-		<RouteOfExposureFilter />
-		<ReliabilityOfTestFilter />
-	</div>
+
+	<Tab>
+		<div class="flex flex-wrap" slot="tab1">
+			<ChemicalCompoundFilter />
+			<EndpointTypeFilter />
+			<TestSubstanceFilter />
+		</div>
+		<div class="flex flex-wrap" slot="tab2">
+			<HealthEffectFilter />
+			<TestSpeciesFilter />
+			<TestConditionsFilter />
+			<GeneralFilter />
+			<ReliabilityOfTestFilter />
+		</div>
+	</Tab>
 </div>
 
 <style>
