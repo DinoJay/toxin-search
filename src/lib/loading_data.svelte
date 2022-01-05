@@ -1,7 +1,7 @@
 <script>
 	import { dsv } from 'd3-fetch';
 	import { v4 as uuidv4 } from 'uuid';
-	import Grid from '$lib/grid.svelte';
+	import ViewList from '$lib/ViewList.svelte';
 	import { onMount } from 'svelte';
 	// console.log('csv', csv);
 	import '../styles/tailwind.css';
@@ -217,14 +217,13 @@
 		{#await dataPromise}
 			<p>...waiting</p>
 		{:then [acuteToxicityCsv, irritationCorosivityCsv, repeatedToxicityCsv, chemicalIdentity]}
-			<Filter bind:typeOfStudy bind:guideline {chemicalIdentity} />
-			<Grid
-				{typeOfStudy}
-				{guideline}
+			<Filter
+				bind:typeOfStudy
+				bind:guideline
+				{chemicalIdentity}
 				{acuteToxicityCsv}
 				{irritationCorosivityCsv}
 				{repeatedToxicityCsv}
-				{chemicalIdentity}
 			/>
 		{:catch error}
 			<p class="text-red-600">{error.message}</p>
