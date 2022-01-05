@@ -144,18 +144,21 @@
 		};
 	};
 
+	const cleanKey = (key) =>
+		key
+			.replace(/ *\([^)]*\) */g, '')
+			.replaceAll('  ', ' ')
+			.trim()
+			.replaceAll(' ', '_')
+			.toLowerCase()
+			.replaceAll('._', '_')
+			.replaceAll('_/', '')
+			.replaceAll('/', '_');
+
 	const cleanKeys = (d) => {
 		const obj = {};
 		Object.keys(d).forEach(function (key) {
-			const cleanedKey = key
-				.replace(/ *\([^)]*\) */g, '')
-				.replaceAll('  ', ' ')
-				.trim()
-				.replaceAll(' ', '_')
-				.toLowerCase()
-				.replaceAll('._', '_')
-				.replaceAll('_/', '')
-				.replaceAll('/', '_');
+			const cleanedKey = cleanKey(key);
 			if (cleanedKey !== '') obj[cleanedKey] = d[key];
 		});
 		return { ...obj };
@@ -170,42 +173,68 @@
 
 	onMount(() => {
 		const acuteToxicity = dsv(';', 'db_acute_toxicity.csv', cleanDatum);
-
 		const irritationCorosivity = dsv(';', 'db_irritation_corosivity.csv', cleanDatum);
 		const repeatedToxicity = dsv(';', 'db_repeated_toxicity.csv', cleanDatum);
-		const chemicalIdentity = dsv(';', 'chemical_identity.csv', (d) => {
-			return cleanKeys(d);
-		});
+		const skinAbsorption = dsv(';', 'skinAbsorption.csv', cleanDatum);
+		const toxicokinetics = dsv(';', 'toxicokinetics.csv', cleanDatum);
+		const chemicalIdentity = dsv(';', 'chemical_identity.csv', (d) => cleanKeys(d));
 		dataPromise = Promise.all([
 			acuteToxicity,
 			irritationCorosivity,
 			repeatedToxicity,
+			// skinAbsorption,
+			// toxicokinetics,
 			chemicalIdentity
 		]).then(([ac, irr, rep, chem]) => [
 			ac.map((d, i) => ({
 				...d,
 				id: `${uuidv4()}-${i}-${d.dossier}`,
-				compound: d.dossier,
+				compound: cleanKey(d.dossier),
 				type: 'acute toxicity'
+				// ...cleanKeys(d)
 			})),
 			irr.map((d, i) => ({
 				...d,
 				id: `${uuidv4()}-${ac.length + i}-${d.dossier}`,
-				compound: d.dossier,
+				compound: cleanKey(d.dossier),
 				type: 'irritation corosivity'
 			})),
 			rep.map((d, i) => ({
 				...d,
 				id: `${uuidv4()}-${ac.length + irr.length + i}-${d.dossier}`,
-				compound: d.dossier,
+				compound: cleanKey(d.dossier),
 				type: 'repeated toxicity'
 			})),
-			chem
+			// skin.map((d, i) => ({
+			// 	...d,
+			// 	id: `${uuidv4()}-${ac.length + irr.length + i}-${d.dossier}`,
+			// 	compound: d.dossier,
+			// 	type: 'skin absorption'
+			// })),
+			// toxico.map((d, i) => ({
+			// 	...d,
+			// 	id: `${uuidv4()}-${ac.length + irr.length + i}-${d.dossier}`,
+			// 	compound: d.dossier,
+			// 	type: 'toxicokinetics'
+			// })),
+			chem.map((d, i) => ({
+				...d,
+				id: uuidv4(),
+				compound: cleanKey(d.dossier),
+				// .replace(/ *\([^)]*\) */g, '')
+				// .replaceAll('  ', ' ')
+				// .trim()
+				// .replaceAll(' ', '_')
+				// .toLowerCase()
+				// .replaceAll('._', '_')
+				// .replaceAll('_/', '')
+				// .replaceAll('/', '_'),
+				// compound: d.dossier,
+				type: 'chemical identity'
+				// ...cleanKeys()
+			}))
 		]);
-		// .then((d, i) => ({ ...d, id: `${d.compound} ${i}` }));
-		console.log('dataPromises', dataPromise);
 	});
-	// const dataPromise = [];
 	let typeOfStudy = null;
 	let guideline = null;
 </script>

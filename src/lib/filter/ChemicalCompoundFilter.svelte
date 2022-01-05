@@ -4,16 +4,10 @@
 	import CompoundInfo from './CompoundInfo.svelte';
 	import ToxicologicalData from './ToxicologicalData.svelte';
 
-	// onMount(() => {
-	// 	const search = chemspider.queryJSON('C1=CC(=C(C=C1O)O)O').then((res) => {
-	// 		console.log('res§', res);
-	// 	});
-	// 	console.log('search', search);
-	// });
 	let q = 'C1=CC(=C(C=C1O)O)O';
 	let imgPromise = null;
 	let compound = null;
-	const defaultCompound = {};
+	const defaultComp = chemicalIdentity.find((d) => d.smiles.toLowerCase() === q.toLowerCase());
 	console.log('chemicalIdentity', chemicalIdentity);
 </script>
 
@@ -22,7 +16,9 @@
 		class=""
 		on:submit={(e) => {
 			e.preventDefault();
-			imgPromise = Promise.resolve({}); //new Promise((d) => Promise.resolve());
+			imgPromise = Promise.resolve(
+				chemicalIdentity.find((d) => d.smiles.toLowerCase() === q.toLowerCase())
+			); //new Promise((d) => Promise.resolve());
 			// imgPromise = searchBySMILES(q).then((e) => {
 			// 	console.log('e', e);
 			// 	console.log('chemical identity', chemicalIdentity);
@@ -42,8 +38,8 @@
 			<p>...waiting</p>
 		{:then imgSrc}
 			<div class="mt-6">
-				<CompoundInfo compound={compound || {}} {imgSrc} />
-				<ToxicologicalData {...$$props} />
+				<CompoundInfo compound={compound || defaultComp} {imgSrc} />
+				<ToxicologicalData {...$$props} compound={defaultComp} />
 			</div>
 		{:catch error}
 			<p style="color: red">{error.message}</p>

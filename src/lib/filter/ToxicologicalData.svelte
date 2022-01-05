@@ -4,12 +4,8 @@
 	export let acuteToxicityCsv = [];
 	export let irritationCorosivityCsv = [];
 	export let repeatedToxicityCsv = [];
-	export let typeOfStudy;
-	export let guideline;
+	export let compound;
 	// import Table from '$lib/table.svelte';
-	$: {
-		console.log('props', $$props);
-	}
 
 	// const data = [
 	// 	'Irritation and corrosivity',
@@ -30,11 +26,18 @@
 	// 	'Extraction'
 	// ];
 
-	$: data = [...acuteToxicityCsv, ...irritationCorosivityCsv, ...repeatedToxicityCsv];
-	console.log('data toxi', data);
+	let tests = [];
+	$: {
+		console.log('props $$$', $$props);
+		console.log('compound compound', compound);
+		const data = [...acuteToxicityCsv, ...irritationCorosivityCsv, ...repeatedToxicityCsv];
+		console.log('data', data);
+		tests = data.filter((d) => d.compound === compound.compound);
+		console.log('tests', tests);
+	}
 </script>
 
 <div>
 	<h2 class="text-xl mb-3">Toxicological Data</h2>
-	<ElementList {data} />
+	<ElementList data={tests} />
 </div>

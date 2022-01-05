@@ -6,7 +6,7 @@
 
 	export let type = 'all';
 	export let data;
-	let groupBy = 'compound';
+	let groupBy = 'type';
 
 	const groupData = (data, attr) => {
 		const groupedData = [...group(data, (d) => d[attr])].map(([key, values]) => ({
@@ -23,12 +23,7 @@
 	let curPage = 0;
 	let numPagesArray = Array.from(Array(numPages));
 	$: {
-		console.log(
-			'type',
-			type,
-			data.filter((d) => d.type === type)
-		);
-		const fData = type === 'all' ? data : data.filter((d) => d.type === type);
+		const fData = data;
 
 		grData = groupData(fData, groupBy);
 		numPages = Math.ceil(grData.length / offset);
@@ -38,33 +33,10 @@
 </script>
 
 <div class="p-2 flex flex-col">
-	<form class="flex items-center p-2" on:submit={(e) => e.preventDefault()}>
-		<p class="mr-2">Group by:</p>
-		<input
-			on:click={(e) => (groupBy = 'compound')}
-			class="mr-1"
-			type="radio"
-			id="compound"
-			name="compound"
-			value="compound"
-			checked={groupBy === 'compound'}
-		/>
-		<label for="compound">Compound</label>
-		<input
-			on:click={(e) => (groupBy = 'guideline')}
-			class="ml-2 mr-1"
-			type="radio"
-			id="guideline"
-			name="guideline"
-			value="guideline"
-			checked={groupBy === 'guideline'}
-		/>
-		<label for="oecd">Guideline</label>
-	</form>
 	<VerticalList
 		className="flex-grow"
 		data={grData.slice(curPage * offset, curPage * offset + offset)}
-		secAttr={groupBy === 'compound' ? 'guideline' : 'compound'}
+		secAttr={'compound'}
 	/>
 	<div class="mt-3">
 		{#each numPagesArray as n, i}
