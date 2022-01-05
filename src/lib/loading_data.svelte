@@ -173,28 +173,35 @@
 
 		const irritationCorosivity = dsv(';', 'db_irritation_corosivity.csv', cleanDatum);
 		const repeatedToxicity = dsv(';', 'db_repeated_toxicity.csv', cleanDatum);
-		dataPromise = Promise.all([acuteToxicity, irritationCorosivity, repeatedToxicity]).then(
-			([ac, irr, rep]) => [
-				ac.map((d, i) => ({
-					...d,
-					id: `${uuidv4()}-${i}-${d.dossier}`,
-					compound: d.dossier,
-					type: 'acute toxicity'
-				})),
-				irr.map((d, i) => ({
-					...d,
-					id: `${uuidv4()}-${ac.length + i}-${d.dossier}`,
-					compound: d.dossier,
-					type: 'irritation corosivity'
-				})),
-				rep.map((d, i) => ({
-					...d,
-					id: `${uuidv4()}-${ac.length + irr.length + i}-${d.dossier}`,
-					compound: d.dossier,
-					type: 'repeated toxicity'
-				}))
-			]
-		);
+		const chemicalIdentity = dsv(';', 'chemical_identity.csv', (d) => {
+			return cleanKeys(d);
+		});
+		dataPromise = Promise.all([
+			acuteToxicity,
+			irritationCorosivity,
+			repeatedToxicity,
+			chemicalIdentity
+		]).then(([ac, irr, rep, chem]) => [
+			ac.map((d, i) => ({
+				...d,
+				id: `${uuidv4()}-${i}-${d.dossier}`,
+				compound: d.dossier,
+				type: 'acute toxicity'
+			})),
+			irr.map((d, i) => ({
+				...d,
+				id: `${uuidv4()}-${ac.length + i}-${d.dossier}`,
+				compound: d.dossier,
+				type: 'irritation corosivity'
+			})),
+			rep.map((d, i) => ({
+				...d,
+				id: `${uuidv4()}-${ac.length + irr.length + i}-${d.dossier}`,
+				compound: d.dossier,
+				type: 'repeated toxicity'
+			})),
+			chem
+		]);
 		// .then((d, i) => ({ ...d, id: `${d.compound} ${i}` }));
 		console.log('dataPromises', dataPromise);
 	});
@@ -209,14 +216,15 @@
 	{#if dataPromise}
 		{#await dataPromise}
 			<p>...waiting</p>
-		{:then [acuteToxicityCsv, irritationCorosivityCsv, repeatedToxicityCsv]}
-			<Filter bind:typeOfStudy bind:guideline />
+		{:then [acuteToxicityCsv, irritationCorosivityCsv, repeatedToxicityCsv, chemicalIdentity]}
+			<Filter bind:typeOfStudy bind:guideline {chemicalIdentity} />
 			<Grid
 				{typeOfStudy}
 				{guideline}
 				{acuteToxicityCsv}
 				{irritationCorosivityCsv}
 				{repeatedToxicityCsv}
+				{chemicalIdentity}
 			/>
 		{:catch error}
 			<p class="text-red-600">{error.message}</p>

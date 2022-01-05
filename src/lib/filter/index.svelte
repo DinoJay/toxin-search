@@ -7,12 +7,14 @@
 	import TestSubstanceFilter from './TestSubstanceFilter.svelte';
 	import EndpointTypeFilter from './EndpointTypeFilter.svelte';
 	export let guideline = null;
+	export let chemicalIdentity;
 	import Tab from '$lib/Tab.svelte';
 	import HealthEffectFilter from './HealthEffectFilter.svelte';
 	import ChemicalCompoundFilter from './ChemicalCompoundFilter.svelte';
 	let tabOpen = 0;
 
 	// $: console.log('observation days', observationDays);
+	console.log('chemical identity', chemicalIdentity);
 </script>
 
 <div class="m-3">
@@ -20,9 +22,9 @@
 
 	<Tab>
 		<div class="flex flex-wrap" slot="tab1">
-			<ChemicalCompoundFilter />
-			<EndpointTypeFilter />
-			<TestSubstanceFilter />
+			<ChemicalCompoundFilter {chemicalIdentity} />
+			<!-- <EndpointTypeFilter /> -->
+			<!-- <TestSubstanceFilter /> -->
 		</div>
 		<div class="flex flex-wrap" slot="tab2">
 			<HealthEffectFilter />

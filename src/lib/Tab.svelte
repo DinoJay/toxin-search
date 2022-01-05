@@ -3,7 +3,7 @@
 </script>
 
 <div class="container">
-	<div class=" flex flex-wrap">
+	<div class=" flex flex-wrap mb-2">
 		<button type="button" class="mr-2 {tabOpen === 0 && 'underline'}" on:click={() => (tabOpen = 0)}
 			>Chemical Compound</button
 		>
