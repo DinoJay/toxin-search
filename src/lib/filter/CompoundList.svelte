@@ -17,7 +17,7 @@
 </script>
 
 <h2>Compounds by Health Effect</h2>
-<div class=" flex flex-col ">
+<div class=" mt-3 flex flex-col ">
 	<ElementList {data} groupBy="compound" />
 </div>
 

@@ -16,17 +16,17 @@
 		class=""
 		on:submit={(e) => {
 			e.preventDefault();
-			imgPromise = Promise.resolve(
-				chemicalIdentity.find((d) => d.smiles.toLowerCase() === q.toLowerCase())
-			); //new Promise((d) => Promise.resolve());
-			// imgPromise = searchBySMILES(q).then((e) => {
-			// 	console.log('e', e);
-			// 	console.log('chemical identity', chemicalIdentity);
-			// 	const tmp = chemicalIdentity.find((d) => d.smiles.toLowerCase() === q.toLowerCase());
-			// 	compound = tmp || defaultCompound;
-			// 	console.log('compound', compound);
-			// 	return e;
-			// });
+			// imgPromise = Promise.resolve(
+			// 	chemicalIdentity.find((d) => d.smiles.toLowerCase() === q.toLowerCase())
+			// ); //new Promise((d) => Promise.resolve());
+			imgPromise = searchBySMILES(q).then((e) => {
+				console.log('e', e);
+				console.log('chemical identity', chemicalIdentity);
+				const tmp = chemicalIdentity.find((d) => d.smiles.toLowerCase() === q.toLowerCase());
+				compound = tmp || defaultCompound;
+				console.log('compound', compound);
+				return e;
+			});
 		}}
 	>
 		<div class="text-lg">

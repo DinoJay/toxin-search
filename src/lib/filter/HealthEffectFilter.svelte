@@ -1,5 +1,6 @@
 <script>
 	import CompoundList from './CompoundList.svelte';
+	import SafetyAssessment from './SafetyAssessment.svelte';
 
 	const data = [
 		{ state: 'Acute Toxicity' },
@@ -72,6 +73,10 @@
 	</form>
 	<div class="mt-3">
 		<CompoundList {...$$props} />
+	</div>
+
+	<div class="mt-6">
+		<SafetyAssessment />
 	</div>
 </div>
 

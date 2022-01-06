@@ -32,7 +32,7 @@
 	}
 </script>
 
-<div class="p-2 flex flex-col">
+<div class=" flex flex-col">
 	<VerticalList
 		className="flex-grow"
 		data={grData.slice(curPage * offset, curPage * offset + offset)}
