@@ -6,7 +6,7 @@
 
 	export let type = 'all';
 	export let data;
-	let groupBy = 'type';
+	export let groupBy = 'type';
 
 	const groupData = (data, attr) => {
 		const groupedData = [...group(data, (d) => d[attr])].map(([key, values]) => ({
@@ -39,11 +39,13 @@
 		secAttr={'compound'}
 	/>
 	<div class="mt-3">
-		{#each numPagesArray as n, i}
-			<button
-				on:click={() => (curPage = i)}
-				class="border px-2 mr-1 {curPage === i && 'bg-blue-500'}">{i}</button
-			>
-		{/each}
+		{#if numPagesArray.length > 1}
+			{#each numPagesArray as n, i}
+				<button
+					on:click={() => (curPage = i)}
+					class="border px-2 mr-1 {curPage === i && 'bg-blue-500'}">{i}</button
+				>
+			{/each}
+		{/if}
 	</div>
 </div>

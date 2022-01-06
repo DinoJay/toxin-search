@@ -133,6 +133,7 @@
 		});
 
 		const type_of_study = obj[TYPE_OF_STUDY];
+		const type = obj.type;
 
 		return {
 			test_endpoints,
@@ -140,7 +141,8 @@
 			test_species,
 			reliability_of_test,
 			route_of_exposure,
-			type_of_study
+			type_of_study,
+			type
 		};
 	};
 
@@ -190,20 +192,23 @@
 				...d,
 				id: `${uuidv4()}-${i}-${d.dossier}`,
 				compound: cleanKey(d.dossier),
-				type: 'acute toxicity'
+				type: 'acute toxicity',
+				categories: { ...d.categories, health_effect: 'acute toxicity' }
 				// ...cleanKeys(d)
 			})),
 			irr.map((d, i) => ({
 				...d,
 				id: `${uuidv4()}-${ac.length + i}-${d.dossier}`,
 				compound: cleanKey(d.dossier),
-				type: 'irritation corosivity'
+				type: 'irritation corosivity',
+				categories: { ...d.categories, health_effect: 'irritation corosivity' }
 			})),
 			rep.map((d, i) => ({
 				...d,
 				id: `${uuidv4()}-${ac.length + irr.length + i}-${d.dossier}`,
 				compound: cleanKey(d.dossier),
-				type: 'repeated toxicity'
+				type: 'repeated toxicity',
+				categories: { ...d.categories, health_effect: 'repeated toxicity' }
 			})),
 			// skin.map((d, i) => ({
 			// 	...d,
@@ -221,6 +226,7 @@
 				...d,
 				id: uuidv4(),
 				compound: cleanKey(d.dossier),
+				categories: { ...d.categories, type: 'chemical identity' },
 				// .replace(/ *\([^)]*\) */g, '')
 				// .replaceAll('  ', ' ')
 				// .trim()

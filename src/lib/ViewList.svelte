@@ -6,7 +6,6 @@
 	export let guideline;
 	// import Table from '$lib/table.svelte';
 	import ElementList from './element-list/index.svelte';
-	import Thumbnails from '$lib/thumbnails/index.svelte';
 	$: {
 		console.log({ acuteToxicityCsv, irritationCorosivityCsv, repeatedToxicityCsv });
 		console.log('typeOfstudy', typeOfStudy);

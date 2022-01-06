@@ -1,11 +1,9 @@
 <script>
-	import GeneralFilter from './GeneralFilter.svelte';
-	import ReliabilityOfTestFilter from './ReliabilityOfTestFilter.svelte';
-	import TestConditionsFilter from './TestConditionsFilter.svelte';
-	import TestSpeciesFilter from './TestSpeciesFilter.svelte';
 	import Tab from '$lib/Tab.svelte';
 	import HealthEffectFilter from './HealthEffectFilter.svelte';
 	import ChemicalCompoundFilter from './ChemicalCompoundFilter.svelte';
+	import AttrElement from '$lib/element-list/attrElement.svelte';
+	import CategoryElement from '$lib/element-list/categoryElement.svelte';
 
 	$: console.log('props ', $$props);
 </script>
@@ -18,11 +16,7 @@
 			<!-- <TestSubstanceFilter /> -->
 		</div>
 		<div class="flex flex-wrap" slot="tab2">
-			<HealthEffectFilter />
-			<TestSpeciesFilter />
-			<TestConditionsFilter />
-			<GeneralFilter />
-			<ReliabilityOfTestFilter />
+			<HealthEffectFilter {...$$props} />
 		</div>
 	</Tab>
 </div>
