@@ -24,7 +24,8 @@
 	];
 
 	const extract = (item) => item.state;
-	let val = null;
+	let val = '';
+	$: valInList = data.find((d) => d.state.toLowerCase() === val.toLowerCase());
 </script>
 
 <div class="text-lg">
@@ -47,7 +48,8 @@
 					{/each}
 				</datalist>
 				<button
-					class="border px-2 py-1"
+					class="border px-2 py-1 {!valInList && 'opacity-50'}"
+					disabled={!valInList}
 					on:click={() => {
 						promise = Promise.resolve({ val, type: 'health-effect' });
 					}}>Go</button
