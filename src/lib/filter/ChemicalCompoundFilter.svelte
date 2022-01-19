@@ -29,7 +29,7 @@
 			});
 		}}
 	>
-		<div class="text-lg">
+		<div class="text-lg ">
 			<label for="compound">‘CAS No’ or ‘INCI / chemical name’ or ‘EC number‘ or ‘ SMILES’</label>
 			<input bind:value={q} class="border m-1" type="text" id="compound" name="compound" />
 			<button class="border m-1 px-1" type="submit">Go!</button>

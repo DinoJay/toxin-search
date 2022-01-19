@@ -1,10 +1,11 @@
 //example id: aa4a0d37-a72c-4243-9eda-02321a6311c0
+const API_KEY = 'M0oFG8rEI7kOb7fyW3QmVi70vQT9Dl5D'
 function searchBySMILES(smiles = "C1=CC(=C(C=C1O)O)O", onError = d => console.log(d)) {
     const url = "https://api.rsc.org/compounds/v1/filter/smiles";
     const options = {
         method: "POST",
         headers: {
-            "apikey": "M0oFG8rEI7kOb7fyW3QmVi70vQT9Dl5D",
+            "apikey": API_KEY,
             "Accept": "application/json",
             "Content-Type": "application/json"
         },
@@ -15,7 +16,7 @@ function searchBySMILES(smiles = "C1=CC(=C(C=C1O)O)O", onError = d => console.lo
     return fetch(url, options).then(
         response => {
             if (response.ok) {
-                return response.text();
+                return response.json();
             }
             return response.text().then(err => {
                 onError(err);
@@ -26,12 +27,12 @@ function searchBySMILES(smiles = "C1=CC(=C(C=C1O)O)O", onError = d => console.lo
                 });
             });
         })
-        .then(queryId => {
-            const url = "https://api.rsc.org/compounds/v1/filter/95ba5cc7-3e32-4042-99ae-6ecc49541472/results";
+        .then(({ queryId }) => {
+            const url = `https://api.rsc.org/compounds/v1/filter/${queryId}/results`;
             const options = {
                 method: "GET",
                 headers: {
-                    "apikey": "M0oFG8rEI7kOb7fyW3QmVi70vQT9Dl5D",
+                    "apikey": API_KEY,
                     "Accept": "application/json"
                 },
             };
@@ -56,7 +57,7 @@ function searchBySMILES(smiles = "C1=CC(=C(C=C1O)O)O", onError = d => console.lo
                     const options = {
                         method: "GET",
                         headers: {
-                            "apikey": "M0oFG8rEI7kOb7fyW3QmVi70vQT9Dl5D",
+                            "apikey": API_KEY,
                             "Accept": "application/json"
                         },
                     };
