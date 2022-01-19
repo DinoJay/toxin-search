@@ -1,6 +1,7 @@
 <script>
 	import CompoundList from './CompoundList.svelte';
 	import SafetyAssessment from './SafetyAssessment.svelte';
+	export let promise;
 
 	const data = [
 		{ state: 'Acute Toxicity' },
@@ -23,21 +24,35 @@
 	];
 
 	const extract = (item) => item.state;
+	let val = null;
 </script>
 
 <div class="text-lg">
+	<h2>Health Effect</h2>
 	<p class="mb-3">Look for compounds with a specific toxicological outcome</p>
 	<form on:submit={(e) => e.preventDefault()}>
 		<div class="mb-3">
 			<div class="">
 				<label for="toxi-outcome">Type the health effect or parameter of interest:</label>
-				<input class="ml-1 p-1 border" list="outcomes" name="toxi-outcome" id="toxi-outcome" />
+				<input
+					class="ml-1 p-1 border"
+					list="outcomes"
+					name="toxi-outcome"
+					id="toxi-outcome"
+					bind:value={val}
+				/>
+				<datalist id="outcomes">
+					{#each data as d}
+						<option value={d.state}>{d.state}</option>
+					{/each}
+				</datalist>
+				<button
+					class="border px-2 py-1"
+					on:click={() => {
+						promise = Promise.resolve({ val, type: 'health-effect' });
+					}}>Go</button
+				>
 			</div>
-			<datalist id="outcomes">
-				{#each data as d}
-					<option value={d.state}>{d.state}</option>
-				{/each}
-			</datalist>
 		</div>
 		<div class="mb-3">
 			<p>Chose the type(s) of study:</p>
@@ -71,13 +86,6 @@
 			</div>
 		</div>
 	</form>
-	<div class="mt-3">
-		<CompoundList {...$$props} />
-	</div>
-
-	<div class="mt-6">
-		<SafetyAssessment />
-	</div>
 </div>
 
 <style>
