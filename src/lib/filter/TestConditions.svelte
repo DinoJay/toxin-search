@@ -1,6 +1,9 @@
 <script>
 	import CloseIcon from 'svelte-remixicon/lib/icons/CloseLine.svelte';
 	import Slider from '@bulatdashiev/svelte-slider';
+	import Expandable from '$lib/Expandable.svelte';
+	export let openId;
+	export let onClick;
 	let observationDays = [2, 40];
 	let exposureTime = [0, 100];
 	let vehicleConcentration = [0, 100];
@@ -11,14 +14,8 @@
 	let exposureTimeEnabled = true;
 </script>
 
-<fieldset
-	class="flex {!testConditionsFilterEnabled && 'opacity-50'}"
-	disabled={!testConditionsFilterEnabled}
->
-	<legend class="text-xl">
-		<span>Test Conditions</span>
-		<input type="checkbox" class="form-checkbox" bind:checked={testConditionsFilterEnabled} />
-	</legend>
+<Expandable open={openId === 'TestConditions'} {onClick}>
+	<h2 class="text-xl" slot="title">Test Conditions</h2>
 	<div>
 		<div
 			class="text-lg p-2 justify-center flex flex-col {!observationPeriodEnabled && 'opacity-50'}"
@@ -56,12 +53,10 @@
 					><CloseIcon color={'#5684fd'} /></button
 				></label
 			>
-			<div class="w-40 {!vehicleConcentrationEnabled && 'pointer-events-none'}">
-				<Slider bind:value={vehicleConcentration} />
-			</div>
+			<Slider bind:value={vehicleConcentration} />
 		</div>
 	</div>
-</fieldset>
+</Expandable>
 
 <style>
 	fieldset {
