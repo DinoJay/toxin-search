@@ -42,7 +42,7 @@
 		</div>
 	</div>
 
-	<div class="border mt-3">
+	<div class="border mt-3 p-3">
 		{#if promise}
 			{#await promise}
 				<p>...waiting</p>
