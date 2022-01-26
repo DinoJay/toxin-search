@@ -39,5 +39,5 @@
 
 <div>
 	<h2 class="text-xl mb-3">Toxicological Data</h2>
-	<ElementList data={tests} />
+	<ElementList data={tests} groupBy="type" />
 </div>
