@@ -79,13 +79,6 @@
 	let invitro = true;
 	let insilico = true;
 	let inchemico = true;
-
-	const testTypeDict = {
-		invivo: ['Test_Repeated_Toxicity_in_vivo_Non_OECD'],
-		invitro: [],
-		insilico: [],
-		inchemico: []
-	};
 </script>
 
 <Expandable open={openId === 'HealthEffect'} {onClick}>
