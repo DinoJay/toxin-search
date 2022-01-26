@@ -30,6 +30,49 @@
 	let val = '';
 	let open = true;
 	$: valInList = data.find((d) => d.state.toLowerCase() === val.toLowerCase());
+
+	const endpointMaker = (n) => `http://localhost:3030/${n}/sparql`;
+	const constructQuery = (e, q) => `${endpointMaker(e)}?query=${encodeURIComponent(q)}&format=json`;
+
+	const sparqlQuery = ` 
+		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX ont: <http://ontologies.vub.be/oecd#>
+
+		SELECT *
+		{
+			?test a ont:Test .
+			?test ont:compound ?compound 
+			OPTIONAL { ?test ont:GLP ?glp .  }
+			OPTIONAL { ?test ont:Ref_in_dossier ?ref_in_dossier .  }
+			OPTIONAL { ?test ont:SCCS_comment_to_test ?scss .  }
+			OPTIONAL { ?test ont:additional_info ?additional_info .  }
+			OPTIONAL { ?test ont:administration_scheme ?administration_scheme .  }
+			OPTIONAL { ?test ont:chemical_batch_nr ?chemical_batch_nr .  }
+			OPTIONAL { ?test ont:conclusion ?conclusion .  }
+			OPTIONAL { ?test ont:critical_effect ?critical_effect .  }
+			OPTIONAL { ?test ont:dermal ?dermal .  }
+			OPTIONAL { ?test ont:description_of_pod ?description_of_pod .  }
+			OPTIONAL { ?test ont:dose_levels ?dose_levels .  }
+			OPTIONAL { ?test ont:dose_levels_unity ?dose_levels_unity .  }
+			OPTIONAL { ?test ont:exposure_period ?exposure_period .  }
+			OPTIONAL { ?test ont:feed ?feed .  }
+			OPTIONAL { ?test ont:moribound_or_dead_animals_prior_to_study_termination ?moribound_or_dead_animals_prior_to_study_termination .  }
+			OPTIONAL { ?test ont:mortality_rate ?mortality_rate .  }
+			OPTIONAL { ?test ont:observation_period ?observation_period .  }
+			OPTIONAL { ?test ont:observations ?observations .  }
+			OPTIONAL { ?test ont:oecd_test_nr ?oecd_test_nr .  }
+			OPTIONAL { ?test ont:pod ?pod .  }
+			OPTIONAL { ?test ont:preliminary_test ?preliminary_test .  }
+			OPTIONAL { ?test ont:purity ?purity .  }
+			OPTIONAL { ?test ont:sex ?sex .  }
+			OPTIONAL { ?test ont:species ?species .  }
+			OPTIONAL { ?test ont:species_strain ?species_strain .  }
+		}	
+	`;
+
+	let oecd = true;
+	let nonOecd = true;
 </script>
 
 <Expandable open={openId === 'HealthEffect'} {onClick}>
@@ -56,7 +99,9 @@
 						class="border px-2 py-1 {!valInList && 'opacity-50'}"
 						disabled={!valInList}
 						on:click={() => {
-							promise = Promise.resolve({ val, type: 'health-effect' });
+							promise = fetch(constructQuery('repeated-toxicity', sparqlQuery))
+								.then((res) => res.json())
+								.then((res) => ({ ...res, oecd, nonOecd, type: 'health-effect' }));
 						}}>Go</button
 					>
 				</div>
@@ -84,11 +129,11 @@
 			<div>
 				<p>Chose the type of guideline(s):</p>
 				<div>
-					<input type="checkbox" id="oecd" name="oecd" checked />
+					<input type="checkbox" id="oecd" name="oecd" bind:checked={oecd} />
 					<label for="oecd">OECD</label>
 				</div>
 				<div>
-					<input type="checkbox" id="non-oecd" name="non-oecd" />
+					<input type="checkbox" id="non-oecd" name="non-oecd" bind:checked={nonOecd} />
 					<label for="non-oecd">Non-OECD</label>
 				</div>
 			</div>

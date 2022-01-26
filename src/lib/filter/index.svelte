@@ -7,6 +7,7 @@
 	import SafetyAssessment from './SafetyAssessment.svelte';
 	import TestSpecies from './TestSpecies.svelte';
 	import TestConditions from './TestConditions.svelte';
+	import ArrowRightSFill from 'svelte-remixicon/lib/icons/ArrowRightSFill.svelte';
 
 	let promise = null;
 	$: console.log('props ', $$props);
@@ -56,7 +57,7 @@
 				{#if res.type === 'health-effect'}
 					<div class="">
 						<div class="mt-3">
-							<CompoundList {...$$props} />
+							<CompoundList {...$$props} {...res} />
 						</div>
 
 						<div class="mt-6">

@@ -4,7 +4,6 @@
 	import CategoryElement from '$lib/element-list/categoryElement.svelte';
 	let open = false;
 	let openCategory = datum.values.map(() => false);
-	console.log('datum', datum);
 </script>
 
 <div>
