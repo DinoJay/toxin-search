@@ -4,9 +4,8 @@
 
 	import VerticalList from './verticalList.svelte';
 
-	export let type = 'all';
 	export let data;
-	export let groupBy = 'type';
+	export let groupBy;
 
 	const groupData = (data, attr) => {
 		const groupedData = [...group(data, (d) => d[attr])].map(([key, values]) => ({
@@ -23,9 +22,7 @@
 	let curPage = 0;
 	let numPagesArray = Array.from(Array(numPages));
 	$: {
-		const fData = data;
-
-		grData = groupData(fData, groupBy);
+		grData = groupData(data, groupBy).sort((a, b) => b.values.length - a.values.length);
 		numPages = Math.ceil(grData.length / offset);
 		curPage = 0;
 		numPagesArray = Array.from(Array(numPages));

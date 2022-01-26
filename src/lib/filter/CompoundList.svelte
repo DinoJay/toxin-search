@@ -8,6 +8,7 @@
 	export let oecd;
 	export let nonOecd;
 	import ElementList from '$lib/element-list/index.svelte';
+	import uniqBy from 'lodash.uniqby';
 
 	const MORIBOUND_OR_DEAD_ANIMALS_PRIOR_TO_STUDY_TERMINATION =
 		'moribound_or_dead_animals_prior_to_study_termination';
@@ -149,13 +150,16 @@
 	};
 
 	const { bindings } = results;
-	const data = bindings
-		.map((d) => {
-			const ret = {};
-			Object.keys(d).map((k) => (ret[k] = d[k].value));
-			return ret;
-		})
-		.map((d) => ({ ...d, id: d.test, categories: getParentCategories(d) }));
+	const data = uniqBy(
+		bindings
+			.map((d) => {
+				const ret = {};
+				Object.keys(d).map((k) => (ret[k] = d[k].value));
+				return ret;
+			})
+			.map((d) => ({ ...d, id: d.test, categories: getParentCategories(d) })),
+		(d) => d.id
+	);
 
 	$: filteredData = data.filter((d) => {
 		if (oecd && nonOecd) return true;

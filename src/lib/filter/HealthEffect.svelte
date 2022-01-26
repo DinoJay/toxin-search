@@ -39,10 +39,11 @@
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 		PREFIX ont: <http://ontologies.vub.be/oecd#>
 
-		SELECT *
+		SELECT DISTINCT *
 		{
 			?test a ont:Test .
-			?test ont:compound ?compound 
+			?test ont:compound ?compound .
+			?test rdf:type ?type .
 			OPTIONAL { ?test ont:GLP ?glp .  }
 			OPTIONAL { ?test ont:Ref_in_dossier ?ref_in_dossier .  }
 			OPTIONAL { ?test ont:SCCS_comment_to_test ?scss .  }
@@ -73,6 +74,17 @@
 
 	let oecd = true;
 	let nonOecd = true;
+	const nonOecdChangeHandler = (e) => {
+		const checked = e.target.checked;
+		if (!oecd && !checked) return;
+		nonOecd = checked;
+	};
+	const oecdChangeHandler = (e) => {
+		const checked = e.target.checked;
+		console.log('checked', checked);
+		if (!nonOecd && !checked) return;
+		oecd = checked;
+	};
 </script>
 
 <Expandable open={openId === 'HealthEffect'} {onClick}>
@@ -95,15 +107,6 @@
 							<option value={d.state}>{d.state}</option>
 						{/each}
 					</datalist>
-					<button
-						class="border px-2 py-1 {!valInList && 'opacity-50'}"
-						disabled={!valInList}
-						on:click={() => {
-							promise = fetch(constructQuery('repeated-toxicity', sparqlQuery))
-								.then((res) => res.json())
-								.then((res) => ({ ...res, oecd, nonOecd, type: 'health-effect' }));
-						}}>Go</button
-					>
 				</div>
 			</div>
 			<div class="mb-3">
@@ -137,6 +140,16 @@
 					<label for="non-oecd">Non-OECD</label>
 				</div>
 			</div>
+
+			<button
+				class="mt-3 border px-2 py-1 w-full {!valInList && 'opacity-50'}"
+				disabled={!valInList}
+				on:click={() => {
+					promise = fetch(constructQuery('repeated-toxicity', sparqlQuery))
+						.then((res) => res.json())
+						.then((res) => ({ ...res, oecd, nonOecd, type: 'health-effect' }));
+				}}>Go</button
+			>
 		</form>
 	</div>
 </Expandable>
