@@ -74,16 +74,17 @@
 
 	let oecd = true;
 	let nonOecd = true;
-	const nonOecdChangeHandler = (e) => {
-		const checked = e.target.checked;
-		if (!oecd && !checked) return;
-		nonOecd = checked;
-	};
-	const oecdChangeHandler = (e) => {
-		const checked = e.target.checked;
-		console.log('checked', checked);
-		if (!nonOecd && !checked) return;
-		oecd = checked;
+
+	let invivo = true;
+	let invitro = true;
+	let insilico = true;
+	let inchemico = true;
+
+	const testTypeDict = {
+		invivo: ['Test_Repeated_Toxicity_in_vivo_Non_OECD'],
+		invitro: [],
+		insilico: [],
+		inchemico: []
 	};
 </script>
 
@@ -112,19 +113,19 @@
 			<div class="mb-3">
 				<p>Chose the type(s) of study:</p>
 				<div>
-					<input type="checkbox" id="in-vivo" name="in-vivo" checked />
+					<input type="checkbox" id="in-vivo" name="in-vivo" bind:checked={invivo} />
 					<label for="in-vivo">In vivo</label>
 				</div>
 				<div>
-					<input type="checkbox" id="in-vitro" name="in-vitro" />
+					<input type="checkbox" id="in-vitro" name="in-vitro" bind:checked={invitro} />
 					<label for="in-vitro">In vitro</label>
 				</div>
 				<div>
-					<input type="checkbox" id="in-silico" name="in-silico" />
+					<input type="checkbox" id="in-silico" name="in-silico" bind:checked={insilico} />
 					<label for="in-silico">In silico</label>
 				</div>
 				<div>
-					<input type="checkbox" id="in-chemico" name="in-chemico" />
+					<input type="checkbox" id="in-chemico" name="in-chemico" bind:checked={inchemico} />
 					<label for="in-chemico">In chemico</label>
 				</div>
 			</div>
@@ -147,7 +148,16 @@
 				on:click={() => {
 					promise = fetch(constructQuery('repeated-toxicity', sparqlQuery))
 						.then((res) => res.json())
-						.then((res) => ({ ...res, oecd, nonOecd, type: 'health-effect' }));
+						.then((res) => ({
+							...res,
+							oecd,
+							nonOecd,
+							invivo,
+							invitro,
+							insilico,
+							inchemico,
+							type: 'health-effect'
+						}));
 				}}>Go</button
 			>
 		</form>

@@ -169,6 +169,13 @@
 	});
 
 	$: console.log('filteredData', filteredData, 'oecd', oecd, 'nonOecd', nonOecd);
+
+	const testTypeDict = {
+		invivo: ['Test_Repeated_Toxicity_in_vivo_Non_OECD'],
+		invitro: [],
+		insilico: [],
+		inchemico: []
+	};
 </script>
 
 <h2>Compounds by Health Effect</h2>
