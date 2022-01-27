@@ -1,13 +1,14 @@
 <script>
 	import HealthEffectFilter from './HealthEffect.svelte';
 	import ChemicalCompoundFilter from './ChemicalCompound.svelte';
-	import CompoundInfo from './CompoundInfo.svelte';
+	import CompoundInfo from './CompoundInfoWrapper.svelte';
 	import ToxicologicalData from './ToxicologicalData.svelte';
 	import CompoundList from './CompoundList.svelte';
 	import SafetyAssessment from './SafetyAssessment.svelte';
 	import TestSpecies from './TestSpecies.svelte';
 	import TestConditions from './TestConditions.svelte';
 	import ArrowRightSFill from 'svelte-remixicon/lib/icons/ArrowRightSFill.svelte';
+	import CompoundInfoWrapper from './CompoundInfoWrapper.svelte';
 
 	let promise = null;
 	$: console.log('props ', $$props);
@@ -50,8 +51,7 @@
 			{:then res}
 				{#if res.type === 'compound'}
 					<div class="">
-						<CompoundInfo compound={res} imgSrc={res.imgSrc} />
-						<ToxicologicalData {...$$props} compound={res} />
+						<CompoundInfoWrapper {...res} />
 					</div>
 				{/if}
 				{#if res.type === 'health-effect'}

@@ -1,5 +1,6 @@
 <script>
 	import Expandable from '$lib/Expandable.svelte';
+	import { constructQuery } from '$lib/sparql.js';
 	import CompoundList from './CompoundList.svelte';
 	import SafetyAssessment from './SafetyAssessment.svelte';
 	export let openId;
@@ -30,9 +31,6 @@
 	let val = '';
 	let open = true;
 	$: valInList = data.find((d) => d.state.toLowerCase() === val.toLowerCase());
-
-	const endpointMaker = (n) => `http://localhost:3030/${n}/sparql`;
-	const constructQuery = (e, q) => `${endpointMaker(e)}?query=${encodeURIComponent(q)}&format=json`;
 
 	const sparqlQuery = ` 
 		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
