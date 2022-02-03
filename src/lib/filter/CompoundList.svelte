@@ -39,7 +39,7 @@
 
 <h2>Compounds by Health Effect</h2>
 <div class=" mt-3 flex flex-col ">
-	<ElementList data={filteredData} groupBy="compound" />
+	<ElementList data={filteredData} groupBy="compoundLabel" secLabel={'test'} />
 </div>
 
 <style>

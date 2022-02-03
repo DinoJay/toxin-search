@@ -9,7 +9,10 @@
 	export let irritationCorosivityCsv = [];
 	export let repeatedToxicityCsv = [];
 	export let compound;
+	export let label;
+	import uniqBy from 'lodash.uniqby';
 	// import Table from '$lib/table.svelte';
+	console.log('$$props', $$props);
 	const sparqlQuery = ` 
 		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -19,6 +22,7 @@
 		{
 			?test a ont:Test .
 			?test ont:compound ?compound .
+			?compound rdfs:label "${label}" .
 			?test rdf:type ?type .
 			OPTIONAL { ?test ont:GLP ?glp .  }
 			OPTIONAL { ?test ont:Ref_in_dossier ?ref_in_dossier .  }
@@ -48,7 +52,6 @@
 		}	
 	`;
 
-	let tests = [];
 	let promise = fetch(constructQuery('repeated-toxicity', sparqlQuery))
 		.then((res) => res.json())
 		.then((e) => {
@@ -58,8 +61,8 @@
 				type: 'repeated-toxicity',
 				categories: getParentCategories(d)
 			}));
-			return tests;
-			// console.log('res', res);
+			console.log('tests', tests);
+			return uniqBy(tests, (d) => d.test); // console.log('res', res);
 		});
 
 	// const data = [
@@ -95,6 +98,6 @@
 	{#await promise}
 		<div>Loading</div>
 	{:then tests}
-		<ElementList data={tests} groupBy="type" />
+		<ElementList data={tests} groupBy="type" secLabel="test" />
 	{/await}
 </div>

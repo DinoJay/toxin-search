@@ -41,6 +41,7 @@
 		{
 			?test a ont:Test .
 			?test ont:compound ?compound .
+			?compound rdfs:label ?compoundLabel .
 			?test rdf:type ?type .
 			OPTIONAL { ?test ont:GLP ?glp .  }
 			OPTIONAL { ?test ont:Ref_in_dossier ?ref_in_dossier .  }
@@ -141,6 +142,7 @@
 						.then((res) => res.json())
 						.then((res) => ({
 							...res,
+							compoundLabel: decodeURI(res.compoundLabel),
 							oecd,
 							nonOecd,
 							invivo,

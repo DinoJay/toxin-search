@@ -1,6 +1,6 @@
 <script>
 	export let data = [];
-	export let secAttr = 'guideline';
+	export let secLabel = 'guideline';
 	export let className;
 	import ListElement from '$lib/element-list/listElement.svelte';
 	let div;
@@ -15,7 +15,7 @@
 <div bind:this={div} class="{className} flex flex-col  overflow-y-auto">
 	{#each data as d (d.key)}
 		<div class="my-1">
-			<ListElement attr={secAttr} datum={d} />
+			<ListElement attr={secLabel} datum={d} />
 		</div>
 	{/each}
 </div>

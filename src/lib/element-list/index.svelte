@@ -6,6 +6,7 @@
 
 	export let data;
 	export let groupBy;
+	export let secLabel;
 
 	const groupData = (data, attr) => {
 		const groupedData = [...group(data, (d) => d[attr])].map(([key, values]) => ({
@@ -33,7 +34,7 @@
 	<VerticalList
 		className="flex-grow"
 		data={grData.slice(curPage * offset, curPage * offset + offset)}
-		secAttr={'compound'}
+		{secLabel}
 	/>
 	<div class="mt-3">
 		{#if numPagesArray.length > 1}

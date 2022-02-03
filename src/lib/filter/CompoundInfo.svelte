@@ -15,7 +15,7 @@
 		</div>
 		<img
 			style="height:200px"
-			class="border"
+			class="border object-contain"
 			height="200"
 			width="200"
 			src={imgSrc}
