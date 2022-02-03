@@ -1,4 +1,5 @@
 //example id: aa4a0d37-a72c-4243-9eda-02321a6311c0
+import { casRegex, smilesRegex } from '$lib/chemRegexes';
 const API_KEY = 'M0oFG8rEI7kOb7fyW3QmVi70vQT9Dl5D'
 function searchBySMILES(smiles = "C1=CC(=C(C=C1O)O)O", onError = d => console.log(d)) {
     const url = "https://api.rsc.org/compounds/v1/filter/smiles";
@@ -92,4 +93,29 @@ function searchBySMILES(smiles = "C1=CC(=C(C=C1O)O)O", onError = d => console.lo
         });
 }
 
-export { searchBySMILES }
+export const wikiDataQuery = (q) => {
+    const trimmedQ = q.trim();//.toLowerCase()
+    const casedQ = !!trimmedQ.match(smilesRegex) ? trimmedQ.toUpperCase() : trimmedQ.toLowerCase();
+    const engAffix = !casedQ.match(casRegex) && !casedQ.match(smilesRegex) ? '@en' : ''
+
+    const sparqlQuery = `SELECT * WHERE {
+        ?subject ?predicate "${casedQ}"${engAffix} .
+        ?subject wdt:P117 ?object .   
+  
+    }`;
+    const endpointUrl = 'https://query.wikidata.org/sparql';
+    const fullUrl = endpointUrl + '?query=' + encodeURIComponent(sparqlQuery);
+    const headers = { 'Accept': 'application/sparql-results+json' };
+
+    return fetch(fullUrl, { headers }).then(body => body.json()).then(r => {
+        const res = r.results?.bindings;
+        if (res) {
+            if (res.length > 0)
+                return res[0].object?.value
+            return null
+        }
+        return null
+
+    });
+}
+

@@ -13,7 +13,14 @@
 			<h1 class="font-bold">Chemical Name</h1>
 			<div class="p-2">{label}</div>
 		</div>
-		<img class="border" height="200" width="200" src={imgSrc} alt="chemical compound" />
+		<img
+			style="height:200px"
+			class="border"
+			height="200"
+			width="200"
+			src={imgSrc}
+			alt="chemical compound"
+		/>
 	</div>
 	<h2>Substance identity</h2>
 	<div class="p-2">
