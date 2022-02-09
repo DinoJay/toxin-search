@@ -1,6 +1,7 @@
 <script>
 	import AttrElement from './attrElement.svelte';
 	import StringElement from './stringElement.svelte';
+	import { fade, slide } from 'svelte/transition';
 	// import { v4 as uuidv4 } from 'uuid';
 
 	export let categories;

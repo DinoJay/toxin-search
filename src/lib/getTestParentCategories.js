@@ -21,7 +21,7 @@ const ADDITIONAL_INFORMATION = 'additional_information';
 const OWN_COMMENTS = 'own_comments';
 
 const test_endpoints_keys = [
-    'target_organ_at_necroscopy',
+    'target_organ',
     'observations_and_recording',
     'dose_descriptor',
     'moribund_or_dead_animals_prior_to_study_termination',
@@ -75,30 +75,6 @@ const reliability_of_test_keys = [
     'Ref_in_dossier'
 ];
 
-const test_conditions = [
-    TYPE_OF_STUDY,
-    ...test_species_keys,
-    TEST_SYSTEM_IN_VITRO,
-    DOSE_LEVELS,
-    DOSE_LEVEL_UNITY,
-    ADMINISTRATION_SCHEME,
-    ...route_of_exposure_keys,
-    DOSE_VOLUME_ML_KG_BW,
-    RINSING_PROCEDURE,
-    USE_OF_ANAESTHETICS_AND_ANALGESICS,
-    VEHICLE_NAME,
-    VEHICLE_CONCENTRATION,
-    OBSERVATION_PERIOD
-];
-const test_method = [...test_substance_keys, ...test_conditions];
-const report = [
-    ...test_endpoints_keys,
-    GRADING_OF_LESION,
-    ...test_method,
-    ...reliability_of_test_keys,
-    ADDITIONAL_INFORMATION,
-    OWN_COMMENTS
-];
 export default (obj) => {
     // console.log('obj', obj);
     // const keys = Object.keys(obj);

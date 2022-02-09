@@ -2,7 +2,9 @@
 	export let data = [];
 	export let secLabel = 'guideline';
 	export let className;
+	import { fade, fly, slide } from 'svelte/transition';
 	import ListElement from '$lib/element-list/listElement.svelte';
+
 	let div;
 
 	$: {
@@ -14,7 +16,7 @@
 
 <div bind:this={div} class="{className} flex flex-col  overflow-y-auto">
 	{#each data as d (d.key)}
-		<div class="my-1">
+		<div transition:fly class="my-1">
 			<ListElement attr={secLabel} datum={d} />
 		</div>
 	{/each}

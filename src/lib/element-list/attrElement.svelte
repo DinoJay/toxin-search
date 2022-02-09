@@ -2,12 +2,14 @@
 	export let categories;
 	export let key;
 
+	import { fade, fly, slide } from 'svelte/transition';
+
 	const cats = Object.entries(categories).map(([key, values]) => ({ key, values }));
 	// console.log('cats', cats);
 	let open = false;
 </script>
 
-<div class=" ">
+<div transition:fly class=" ">
 	<div class="bg-gainsboro my-2 p-3" role="button" on:click={() => (open = !open)}>{key}</div>
 	{#if open}
 		<div class="ml-8">
