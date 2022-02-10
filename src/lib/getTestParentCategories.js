@@ -22,12 +22,21 @@ const OWN_COMMENTS = 'own_comments';
 
 const test_endpoints_keys = [
     'target_organ',
-    'observations_and_recording',
-    'dose_descriptor',
+    'observations',
     'moribund_or_dead_animals_prior_to_study_termination',
     'mortality_rate',
     'conclusion'
 ];
+
+const test_conditions_keys = [
+    'dose_levels',
+    'dose_level_unit',
+    'dose_volume',
+    'rinsing_procedure',
+    'vehicle_concentration',
+    'exposure_time',
+    'observation_period'
+]
 
 const test_substance_keys = [
     'homogeneity_and_stability',
@@ -44,17 +53,15 @@ const test_substance_keys = [
 const route_of_exposure_keys = [
     'oral',
     'dermal',
-    'body',
-    'surface_area',
+    'body_surface',
     'patching_technique',
     'skin_condition',
     'inhalation',
-    'occular',
     'other'
 ];
 
 const test_species_keys = [
-    'species_strain',
+    'species',
     'source',
     'age_at_start_of_experiment',
     'age_measuring_unit',
@@ -62,15 +69,14 @@ const test_species_keys = [
     'weight',
     'weight_measuring_unit',
     'feed',
-    'n_animals_dose',
-    'test_system_details'
+    // 'n_animals_dose',
 ];
 
 const reliability_of_test_keys = [
-    'scss',
+    'scss_comment_to_test',
     'year',
     'control_groups',
-    'glp_preliminary_study',
+    'glp',
     'klimisch_score',
     'Ref_in_dossier'
 ];
@@ -82,6 +88,7 @@ export default (obj) => {
     let test_substance = {};
     let test_species = {};
     let reliability_of_test = {};
+    let test_conditions = {}
     let route_of_exposure = {};
 
     test_endpoints_keys.forEach((k) => {
@@ -96,6 +103,9 @@ export default (obj) => {
     reliability_of_test_keys.forEach((k) => {
         reliability_of_test[k] = obj[k];
     });
+    test_conditions_keys.forEach((k) => {
+        test_conditions[k] = obj[k];
+    });
     route_of_exposure_keys.forEach((k) => {
         route_of_exposure[k] = obj[k];
     });
@@ -108,6 +118,7 @@ export default (obj) => {
         test_substance,
         test_species,
         reliability_of_test,
+        test_conditions,
         route_of_exposure,
         type_of_study,
         type
