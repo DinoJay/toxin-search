@@ -5,7 +5,8 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/6>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/β-arbutin> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/128>
         a                       ont:Test ;
@@ -13,6 +14,7 @@
         ont:body_surface        "25 cm² for males and 18 cm² for females" ;
         ont:chemical_batch_nr   "3962/46" ;
         ont:composition         "test substance suspended in 1% aqueous carboxymethylcellulose" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/4-amino-2-nitrodiphenylamine-2%27-carboxylic%20acid> ;
         ont:conclusion          "the dermal ld50 was reported to be in excess of 2000 mg/kg bw in both males and females." ;
         ont:dermal              "yes" ;
         ont:dose_descriptor     "> 2000" ;
@@ -43,6 +45,7 @@
         ont:additional_info       "test substance: fat 65'080/f." ;
         ont:chemical_batch_nr     "lot04122fc7" ;
         ont:composition           "the test item and the placebo were prepared as aqueous dilutions at a ratio (w/w) of 20% fat65’080/f or 20% fat65’080-placebo plus 80% purified water" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/1%2C3%2C5-triazine%2C%202%2C4%2C6-tris%281%2C1%27-biphenyl%29-4-yl-> ;
         ont:concentration         "47.6 % of the active uv filter eth50,  the target concentration as active ingredient of uv filter eth50 was 10%. " ;
         ont:conclusion            "the applicant argued that such pulmonary inflammatory responses are not expected with use of eth50 in sunscreens or other products from spray-on dispensers. spray applicators are generally pump-type dispensers with some increase in marketed products using fine-spray aerosol type dispensers. in each of these applicators, the droplet sizes (aerosol) are designed to be at least 30 times larger than those used in this rat inhalation test. according to durand et al. (2007), sunscreen sprayable formulations should be dispensed with droplet size of more than 30 µm (mmad) with not more than 1% of droplets of aerodynamic diameter at or below 10 µm. the authors concluded that for nanosized eth50 the inhalation LC50 is greater than the highest technically achievable aerosol concentration level of 4.976 mg formulation/L air, or greater than 0.4976 mg eth50/L air, according to this study’s results with mmad of about 1.2 µm. a notable but reversible lung inflammatory response occurred which is considered a normal non-allergenic type response to particle exposures." ;
         ont:control_groups        "an additional group of 15 males and 15 females was exposed to an aqueous dilution of the control item, fat 65’080placebo, at aerosol generation conditions similar to those used for the test item " ;
@@ -65,6 +68,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/83>
         a                    ont:Test ;
         ont:additional_info  "test substance: POPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dermal           "yes" ;
         ont:dose_descriptor  "> 2000" ;
         ont:ref_in_dossier   "15" ;
@@ -80,6 +84,7 @@
         a                          ont:Test ;
         ont:chemical_batch_nr      "930700805" ;
         ont:composition            "suspension in vehicle" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/hc%20yellow%20n°%204> ;
         ont:conclusion             "under the conditions of the study, hc yellow n°4 is considered as having acute oral toxicity above 500 mg/kg/bw." ;
         ont:dose_descriptor        ">500" ;
         ont:dose_level_unit        "mg/kg bw" ;
@@ -107,6 +112,7 @@
         ont:additional_info     "test substance: wp30" ;
         ont:body_surface        "10% of the body surface" ;
         ont:chemical_batch_nr   "LP110" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/phenylene%20bis-diphenyltriazine> ;
         ont:conclusion          "no death occurred during the course of the study and no abnormal clinical signs were observed. body weight: for males, body weight evolution was not affected by the treatment. for females, the treatment induced a slight body weight loss (-2 grams in average) observed in all females between D1 and D3 but weight increase was restored thereafter. this transient observation on body weight evolution was most probably related to the nonocclusive tape. skin reaction: neither erythema nor edema was observed so that the individual irritation index was equal to 0 for all animals. consequently, the primary irritation index of the group was also equal to 0. desquamation was present on D5 (72 h reading time) in one female and on D8 in 2 females. within the experimental conditions of the study, the potential acute dermal toxicity of WP30 was evaluated after a single topical application on wistar rat skin. 5 males and 5 females were treated at 2000 mg/kg bw in a limit test for a 24-hour exposure period. no mortality was observed and the LD50 by dermal application was estimated to be higher than 2000 mg/kg bw. furthermore, WP30 was not irritating to the skin of rats." ;
         ont:dermal              "yes" ;
         ont:dose_descriptor     "> 2000 mg/kg bw" ;
@@ -131,6 +137,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/20>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/trisodium%20nitrilotriacetate> ;
         ont:conclusion       "nta has a low acute toxicity by inhalation route" ;
         ont:dose_descriptor  ">5.0" ;
         ont:inhalation       "yes" ;
@@ -143,6 +150,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/136>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/triclosan> ;
         ont:conclusion       "triclosan is not acutely toxic via the oral route of administration, with high oral intubation ld50" ;
         ont:dose_descriptor  "4350" ;
         ont:glp              "no"^^xsd:boolean ;
@@ -160,6 +168,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/115>
         a                       ont:Test ;
         ont:chemical_batch_nr   "a3221" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/2%2C6-diaminopyridine> ;
         ont:conclusion          "the LD50 was between 50-300 mg/kg bw" ;
         ont:dose_descriptor     "50-300" ;
         ont:dose_level_unit     "mg/kg bw in step 2 and 3; in step 1" ;
@@ -179,11 +188,13 @@
         ont:year                "2006" .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/91>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/methoxypropylamino%20cyclohexenylidene%20ethoxyethylcyanoacetate%20%28S87%29> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/70>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "2733" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "77" ;
@@ -197,6 +208,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/49>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dermal           "yes" ;
         ont:dose_descriptor  "37" ;
         ont:ref_in_dossier   "c29" ;
@@ -210,6 +222,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/28>
         a                    ont:Test ;
         ont:additional_info  "test substance: sodium perborate tetrahydrate" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/sodium%20perborate%20%20and%20perboric%20acid> ;
         ont:dose_descriptor  "2567" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "degussa 1987" ;
@@ -236,6 +249,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/1>
         a                         ont:Test ;
         ont:composition           "test substance in  the vehicle" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/1%2C2%2C4-trihydroxybenzene%20> ;
         ont:dose_descriptor       "350 - 500" ;
         ont:dose_level_unit       "mg/kg bw" ;
         ont:dose_levels           "100, 250, 350, 500, 1000 " ;
@@ -254,6 +268,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/144>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/acid%20orange%207> ;
         ont:conclusion       "the test substance is of very low acute oral toxicity." ;
         ont:dose_descriptor  "> 10.000" ;
         ont:oral             "yes" ;
@@ -266,6 +281,7 @@
         a                       ont:Test ;
         ont:additional_info     "test substance: 2-amino-5-ethylphenol phosphate (wr 802433)" ;
         ont:chemical_batch_nr   "gst 079-03/52-09" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/2-amino-5-ethylphenol%20HCl> ;
         ont:conclusion          "the acute toxicity of 2-amino-5-ethylphenol phosphate is low after single oral administration to female rats. the LD50 of 2-amino-5-ethylphenol phosphate is greater than 2000 mg/kg bw, corresponding to 1476 mg/kg bw as hydrochloride salt." ;
         ont:dose_descriptor     "> 2000" ;
         ont:dose_level_unit     "mg/kg bw" ;
@@ -289,6 +305,7 @@
         a                       ont:Test ;
         ont:additional_info     "test substance: mip 2985" ;
         ont:chemical_batch_nr   "029753 a8aa" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/basic%20red%2051> ;
         ont:dose_level_unit     "mg/kg bw" ;
         ont:dose_levels         "500, 1000, 1500, 2000" ;
         ont:glp                 "yes"^^xsd:boolean ;
@@ -307,6 +324,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/99>
         a                          ont:Test ;
         ont:chemical_batch_nr      "510149" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/hc%20red%20n°%207> ;
         ont:concentration          "99.3" ;
         ont:conclusion             "maximal non-lethal dose of hc red no. 7 (b036) (batch no. 0510149) of 300 mg/kg by the oral route in rats; 2000 mg/kg as the minimal lethal dose." ;
         ont:dose_level_unit        "mg/kg bw" ;
@@ -329,6 +347,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/78>
         a                    ont:Test ;
         ont:additional_info  "test substance: SOPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "846, 591" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "78" ;
@@ -337,6 +356,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/57>
         a                         ont:Test ;
+        ont:compound              <http://toxin.vub.be/resource/compound/n-methyl-2-pyrrolidone%20%28NMP%29> ;
         ont:dose_descriptor       "7710 (5900-9600)" ;
         ont:oral                  "yes" ;
         ont:ref_in_dossier        "4" ;
@@ -345,6 +365,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/36>
         a                          ont:Test ;
+        ont:compound               <http://toxin.vub.be/resource/compound/polysilicone-15> ;
         ont:conclusion             "greater than 2000 mg/kg bw" ;
         ont:dose_descriptor        "> 2000" ;
         ont:dose_level_unit        "mg/kg bw" ;
@@ -372,6 +393,7 @@
         a                       ont:Test ;
         ont:additional_info     "product derived," ;
         ont:composition         "shampoo containing  zpt" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:concentration       "2" ;
         ont:conclusion          "these data are in line with a study on zpt alone indicating that its incorporation into a shampoo formulation does not significantly enhance penetration" ;
         ont:dermal              "yes" ;
@@ -387,6 +409,7 @@
         a                         ont:Test ;
         ont:additional_info       "label: zinc-pyrion" ;
         ont:chemical_batch_nr     "tox 1000" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:conclusion            "the following LC50 values were derived: males: 0.84 mg/l, females: 1.34 mg/l, males and females combined: 1.03 mg/l. the results of this study lead to classification as acute tox 3; H331 (toxic if inhaled) according to CLP (Regulation (EC) No 1272/2008) by the registrant. " ;
         ont:dose_descriptor       "0.84; 1.34; 1.03" ;
         ont:dose_level_unit       "mg/l" ;
@@ -413,6 +436,7 @@
         ont:additional_info     "test substance: nitrogelb" ;
         ont:body_surface        "30 cm² (corresponding to at least 10% of the body surface)" ;
         ont:chemical_batch_nr   "b1/89" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/4-nitrophenyl%20aminoethylurea> ;
         ont:conclusion          "the acute dermal toxicity study with 4-nitrophenylaminoethylurea in 5 male and 5 female rats revealed a dermal ld50 of > 2000 mg/kg bw." ;
         ont:dermal              "yes" ;
         ont:dose_descriptor     "> 2000" ;
@@ -436,7 +460,8 @@
                 "the test substance was moistened with distilled water immediately before testing," .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/110>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/1-hydroxyethyl-4%2C5-diamino%20pyrazole%20sulfate> .
 
 <http://toxin.vub.be/resource/dossier/vitamin%20a>
         a             ont:Report ;
@@ -458,6 +483,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/86>
         a                    ont:Test ;
         ont:additional_info  "test substance: SOPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "> 1331" ;
         ont:exposure_time    "1" ;
         ont:particle_size    "aerosol" ;
@@ -475,6 +501,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/65>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "≈ 3000" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "154" ;
@@ -482,6 +509,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/44>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dose_descriptor  "671, 1270" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "c26" ;
@@ -491,6 +519,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/23>
         a                         ont:Test ;
         ont:additional_info       "test substance labelled ‘RIFM # 71-90’, no information on the ester content" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/vetiveryl%20acetate> ;
         ont:dermal                "yes" ;
         ont:dose_descriptor       ">5000" ;
         ont:dose_level_unit       "mg/kg bw" ;
@@ -554,6 +583,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/139>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/triclosan> ;
         ont:dose_descriptor  "29" ;
         ont:dose_level_unit  "mg/kg" ;
         ont:dose_levels      "10, 20, 30" ;
@@ -569,6 +599,7 @@
         ont:additional_info        "test substance: da 100491" ;
         ont:chemical_batch_nr      "l6/186" ;
         ont:composition            "test substance suspended in the vehicle" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/2%2C6-diamino-3-%28%28pyridin-3-yl%29azo%29pyridine%20> ;
         ont:dose_descriptor        "789" ;
         ont:dose_level_unit        "mg/kg bw" ;
         ont:dose_levels            "346, 600, 1039, 1800  " ;
@@ -598,6 +629,7 @@
         ont:additional_info        "test substance: hc yellow n° 9 suspended in 1.0% aqueous carboxymethylcellulose" ;
         ont:chemical_batch_nr      "dg1" ;
         ont:composition            "test substance suspension in 1% aqueous cmc" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/hc%20yellow%20n°9> ;
         ont:dose_descriptor        "745, 1609 " ;
         ont:dose_level_unit        "mg/kg bw" ;
         ont:dose_levels            "700, 910, 1180, 1540, 2000" ;
@@ -617,6 +649,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/73>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "3499, 3152" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "280" ;
@@ -630,6 +663,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/52>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dermal           "yes" ;
         ont:dose_descriptor  ">8000; >5000" ;
         ont:ref_in_dossier   "a2" ;
@@ -643,6 +677,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/31>
         a                    ont:Test ;
         ont:additional_info  "test substance: sodium perborate tetrahydrate" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/sodium%20perborate%20%20and%20perboric%20acid> ;
         ont:dose_descriptor  "1164" ;
         ont:exposure_time    "4" ;
         ont:inhalation       "yes" ;
@@ -654,6 +689,7 @@
         a                         ont:Test ;
         ont:chemical_batch_nr     "orc-152-011 dp" ;
         ont:composition           "Zinc Omadine® Powder; Id.-No. 10215B" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:dose_descriptor       "<0.6" ;
         ont:dose_level_unit       "mg/l" ;
         ont:dose_levels           "0.24, 0.61" ;
@@ -680,6 +716,7 @@
         ont:additional_info       "test substance: emeressence 1160 (2-phenoxyethanol)" ;
         ont:body_surface          "dorsal" ;
         ont:chemical_batch_nr     "2219-93" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/phenoxyethanol> ;
         ont:conclusion            "sufficiently reliable for evaluation of the endpoint of acute dermal toxicity although the study wasn't conducted under glp and the test substance purity was not reported" ;
         ont:dermal                "yes" ;
         ont:dose_descriptor       ">2214" ;
@@ -710,6 +747,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/126>
         a                    ont:Test ;
         ont:additional_info  "test substance: 2-methoxymethyl-p-phenylenediamine sulfate" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/2-methoxy-methyl-p-phenylenediamine%20and%20its%20sulfate%20salt> ;
         ont:conclusion       "LD50 mice (intraperitoneal): 100 - 250 mg/kg bw" ;
         ont:dose_level_unit  "mg/kg bw" ;
         ont:other            "intraperitoneal" ;
@@ -720,6 +758,7 @@
         a                       ont:Test ;
         ont:additional_info     "test substance: 1,5-naphtalenediol" ;
         ont:chemical_batch_nr   "820211/01" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/1%2C5-naphthalenediol> ;
         ont:conclusion          "the oral LD50 value was established to exceed 2000 mg/kg bw" ;
         ont:dose_level_unit     "mg/kg bw" ;
         ont:dose_levels         "2000" ;
@@ -738,6 +777,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/81>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dermal           "yes" ;
         ont:dose_descriptor  "> 2000" ;
         ont:ref_in_dossier   "16" ;
@@ -745,7 +785,8 @@
         ont:species          "rat" .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/60>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/hc%20yellow%20n°%204> .
 
 <http://toxin.vub.be/resource/compound/hc%20yellow%20n°9>
         a               ont:Compound ;
@@ -767,6 +808,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/39>
         a                          ont:Test ;
         ont:additional_info        "test substance: picramic acid" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/picramic%20acid%20and%20sodium%20picramate> ;
         ont:conclusion             "the acute median lethal oral dose (LD50) and its 95% confidence limits to rats of picramic acid were calculated to be 110 (63-176) mg/kg bw." ;
         ont:dose_descriptor        "110" ;
         ont:dose_level_unit        "ml/kg bw" ;
@@ -796,6 +838,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/18>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/trisodium%20nitrilotriacetate> ;
         ont:conclusion       "nta has a low acute toxicity by oral route" ;
         ont:dose_descriptor  "750; 1300-1470, 1600-2220; >5000 " ;
         ont:oral             "yes" ;
@@ -815,6 +858,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/134>
         a                    ont:Test ;
         ont:additional_info  "test substance: acid black n° 1" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/acid%20black%201> ;
         ont:conclusion       "the lethal dose (LD50) was > 5,000 mg/kg body weight. there were no symptoms of intoxication." ;
         ont:dose_descriptor  "> 5,000" ;
         ont:dose_level_unit  "mg/kg bw" ;
@@ -833,7 +877,8 @@
         ont:compoundOf  <http://toxin.vub.be/resource/dossier/β-arbutin> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/113>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/2%2C5%2C6-triamino-4-pyrimidinol%20sulfate> .
 
 <http://toxin.vub.be/resource/dossier/resorcinol>
         a             ont:Report ;
@@ -843,6 +888,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/89>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-aminophenol> ;
         ont:dose_descriptor  "1.259" ;
         ont:ref_in_dossier   "2,4,6 (subm. 5)" ;
         ont:species          "mouse" .
@@ -850,6 +896,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/68>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "2600, 2850 " ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "278" ;
@@ -858,6 +905,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/47>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dose_descriptor  "393, 1139; 4-10" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "a2" ;
@@ -872,6 +920,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/26>
         a                    ont:Test ;
         ont:additional_info  "test substance: sodium perborate(not specified)" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/sodium%20perborate%20%20and%20perboric%20acid> ;
         ont:dose_descriptor  "3250, 3600\nmale : 3600" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "ecb 2007" ;
@@ -891,6 +940,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/142>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/triclosan> ;
         ont:conclusion       "triclosan is not acutely toxic via the oral route of administration, with high oral intubation ld50" ;
         ont:dose_descriptor  "> 5000" ;
         ont:glp              "no"^^xsd:boolean ;
@@ -902,6 +952,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/121>
         a                          ont:Test ;
         ont:additional_info        "test substance: 1-methoxy-2-amino-4-ß-hydroxyethylamino-benzene-sulphate." ;
+        ont:compound               <http://toxin.vub.be/resource/compound/2-amino-4-hydroxyethylaminoanisole%20sulfate> ;
         ont:conclusion             "based on these findings, 1-methoxy-2-amino-4-ß-hydroxyethylamino-benzene-sulphate is considered as moderately toxic to rats and mice with LD50 values in the range of 475 to 588 mg/kg bw." ;
         ont:dose_descriptor        "588, 475; 538" ;
         ont:dose_level_unit        "mg/kg bw rat; mouse" ;
@@ -921,14 +972,17 @@
         ont:vehicle_concentration  "10" .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/100>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/hydroxypropyl%20bis%28n-hydroxyethyl-p-phenylenediamine%29%20HCl> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/97>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/hc%20yellow%20n°%2013> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/76>
         a                    ont:Test ;
         ont:additional_info  "test substance: SOPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "1650, 1550" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "276" ;
@@ -937,6 +991,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/55>
         a                         ont:Test ;
+        ont:compound              <http://toxin.vub.be/resource/compound/n-methyl-2-pyrrolidone%20%28NMP%29> ;
         ont:dose_descriptor       "4150 (3100-5560)" ;
         ont:oral                  "yes" ;
         ont:ref_in_dossier        "3" ;
@@ -953,6 +1008,7 @@
         ont:additional_info     "test substance: 4-formyl-1-methylquinolonium-p-toluenesulfonate in distilled water" ;
         ont:body_surface        "on the back" ;
         ont:chemical_batch_nr   "Gro-HM-7733-092" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/quinolinium%2C%204-formyl-1-methyl-%2C%20salt%20with%204-methylbenzene%20sulfonic%20acid%20%281%3A1%29> ;
         ont:conclusion          "the animals were examined for mortality, clinical signs and body weight. on day 15 the study was terminated and necropsy was performed. no treatment-related findings were observed. the LD50 is greater than 2000 mg/kg bw in this study." ;
         ont:dermal              "yes" ;
         ont:dose_descriptor     "> 2000" ;
@@ -971,6 +1027,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/13>
         a                   ont:Test ;
+        ont:compound        <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:conclusion      "zinc pyrithione in a cream shampoo product is a potent emetic (ED50 app. 0.05 g/kg).  the ratios of ED50 to LD50 for both forms of the product are 1:125 for the cream shampoo and 1:42 for the lotion shampoo; therefore it was concluded in that it is unlikely that a human accidentally ingesting shampoo could retain a hazardous amount." ;
         ont:observations    "product derived emetic study, in the study with dogs, the emesis typically occurred within 60 minutes of dosing, the average being 30 minutes, and involved two to four episodes. occasional bloody vomitus was seen, indicating gastric irritation." ;
         ont:oral            "yes" ;
@@ -988,6 +1045,7 @@
         ont:body_surface          "on the back after fur clipping" ;
         ont:chemical_batch_nr     "lot A" ;
         ont:composition           "β-Arbutin 30% in a 50:50 ethanol:water solution" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/β-arbutin> ;
         ont:concentration         "30" ;
         ont:conclusion            "for rats and mice the LD50 value via the dermal route is greater than the technically applicable maximal dose" ;
         ont:dermal                "yes" ;
@@ -1017,6 +1075,7 @@
         a                          ont:Test ;
         ont:additional_info        "test substance: 4-chlororesorcinol, 10 % solution in aqueous sodium sulphite (0.05%)" ;
         ont:composition            "test substance solution in aqueous sodium sulphite" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/4-chlororesorcinol> ;
         ont:concentration          "10" ;
         ont:conclusion             "the acute median lethal oral dose (ld50) and its 95% confidence limits to rats of 4- chlororesorcinol were calculated to 369 (314-433) mg/kg." ;
         ont:control_groups         "rats treated with the vehicle alone (6.4 ml/kg bw) served as controls" ;
@@ -1051,6 +1110,7 @@
         ont:age_at_start_of_experiment  "8" ;
         ont:age_measuring_unit          "w" ;
         ont:chemical_batch_nr           "eth  50/129b" ;
+        ont:compound                    <http://toxin.vub.be/resource/compound/1%2C3%2C5-triazine%2C%202%2C4%2C6-tris%281%2C1%27-biphenyl%29-4-yl-> ;
         ont:conclusion                  "under the conditions of this study the median lethal dose of the test substance after oral dosing was found to be greater than 2000 mg/kg bw for male and female rats." ;
         ont:dose_level_unit             "mg/kg bw in group 1 and 2, respectively" ;
         ont:dose_levels                 "200, 2000 " ;
@@ -1074,6 +1134,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/84>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "> 949" ;
         ont:exposure_time    "1" ;
         ont:particle_size    "aerosol" ;
@@ -1085,6 +1146,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/63>
         a                          ont:Test ;
         ont:chemical_batch_nr      "bra1/285" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/hydroxyethyl-2-nitro-p-toluidine> ;
         ont:conclusion             "though this study does not follow guideline 401, (1981), the results indicate that the acute oral toxicity of hydroxyethyl-2-nitro-p-toluidine is low." ;
         ont:dose_descriptor        "1564, 1436; 1600, 1750 " ;
         ont:dose_level_unit        "mg/kg bw in rats; in mice" ;
@@ -1108,6 +1170,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/42>
         a                         ont:Test ;
         ont:additional_info       "test substance: cosmetic ingredient S02771" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/phenylene%20bis-diphenyltriazine> ;
         ont:concentration         "concentrations corresponding to 0, 0.29, 0.55 and 0.98 mg/L for the ground active substance" ;
         ont:control_groups        "no control group was reported." ;
         ont:dose_level_unit       "achieved aerosol concentration of the suspension in mg/L" ;
@@ -1133,6 +1196,7 @@
         a                         ont:Test ;
         ont:additional_info       "ester content 65.9%" ;
         ont:chemical_batch_nr     "9000317035" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/vetiveryl%20acetate> ;
         ont:conclusion            "there were no deaths, clinical signs, macroscopic findings or affected body weight gain in any of the dosed animals" ;
         ont:dose_descriptor       ">2000" ;
         ont:dose_level_unit       "mg/kg bw" ;
@@ -1170,6 +1234,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/137>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/triclosan> ;
         ont:dose_descriptor  "184" ;
         ont:glp              "no"^^xsd:boolean ;
         ont:moribund_or_dead_animals_prior_to_study_termination
@@ -1190,6 +1255,7 @@
         a                          ont:Test ;
         ont:additional_info        "test substance: 1-β-hydroxyethyl-3,4-methylenedioxybenzene suspended to 10% in a 10% gum arabic solution " ;
         ont:composition            "suspension test substance in vehicle" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/hydroxyethyl-3%2C4-methylenedioxyaniline%20HCl> ;
         ont:concentration          "10%" ;
         ont:conclusion             "the following LD50 values were calculated using the method ofsSpearman-karber." ;
         ont:dose_descriptor        "1550; 1650; 850" ;
@@ -1212,6 +1278,7 @@
         a                          ont:Test ;
         ont:additional_info        "test substance: hydroxyethyl-p-phenylenediamine dihydrochloride" ;
         ont:composition            "aqueous solution" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/hydroxyethyl-p-phenylenediamine%20sulfate> ;
         ont:concentration          "1" ;
         ont:conclusion             "the substance was considered to be moderately toxic." ;
         ont:dose_descriptor        "150; 90" ;
@@ -1237,6 +1304,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/71>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "≈ 2000" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "313" ;
@@ -1244,6 +1312,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/50>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dermal           "yes" ;
         ont:dose_descriptor  "470" ;
         ont:ref_in_dossier   "a2" ;
@@ -1252,6 +1321,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/29>
         a                    ont:Test ;
         ont:additional_info  "test substance: boric acid, sodium borate, or sodium perborate " ;
+        ont:compound         <http://toxin.vub.be/resource/compound/sodium%20perborate%20%20and%20perboric%20acid> ;
         ont:dose_descriptor  "100-500" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "dreisbach, 1987" ;
@@ -1267,6 +1337,7 @@
         a                       ont:Test ;
         ont:chemical_batch_nr   "506382" ;
         ont:composition         "test subtance in carboxymethylcellulose/water" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/1%2C2%2C4-trihydroxybenzene%20> ;
         ont:concentration       "1" ;
         ont:conclusion          "the maximal non-lethal dose of 1,2,4-trihydroxybenzene was 2000 mg/kg bw by dermal route in rats. " ;
         ont:dermal              "yes" ;
@@ -1287,6 +1358,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/145>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/acid%20orange%207> ;
         ont:conclusion       "the test substance is of very low acute oral toxicity." ;
         ont:dose_descriptor  "11,300" ;
         ont:oral             "yes" ;
@@ -1305,6 +1377,7 @@
         ont:additional_info     "test substance: 2-hydroxyethylamino-5-nitroanisole" ;
         ont:chemical_batch_nr   "507391" ;
         ont:composition         "test substance suspended in 0.5% methylcellulose" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/2-hydroxyethylamino-5-nitroanisole> ;
         ont:conclusion          "the maximal non-lethal dose of the test substance was 500 mg/kg bw and the minimal lethal dose is 1000 mg/kg bw under the experimental conditions." ;
         ont:dose_level_unit     "mg/kg bw" ;
         ont:dose_levels         "500" ;
@@ -1322,6 +1395,7 @@
         a                       ont:Test ;
         ont:additional_info     "test substance: mip 2985" ;
         ont:chemical_batch_nr   "029753 a8aa" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/basic%20red%2051> ;
         ont:dose_level_unit     "mg/kg bw" ;
         ont:dose_levels         "250, 500" ;
         ont:glp                 "yes"^^xsd:boolean ;
@@ -1341,6 +1415,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/79>
         a                    ont:Test ;
         ont:additional_info  "test substance: SOPP produced by DOW chemicals / SOPP produced by Tokyo Kasei Co" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "857, 812 / 1018, 683 " ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "206" ;
@@ -1349,6 +1424,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/58>
         a                         ont:Test ;
+        ont:compound              <http://toxin.vub.be/resource/compound/n-methyl-2-pyrrolidone%20%28NMP%29> ;
         ont:dermal                "yes" ;
         ont:dose_descriptor       "2500 - 5000" ;
         ont:ref_in_dossier        "5" ;
@@ -1369,6 +1445,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/37>
         a                       ont:Test ;
         ont:body_surface        "backs and flanks (16 cm²,about 10% of the body surface)" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/polysilicone-15> ;
         ont:conclusion          "greater than 2000 mg/kg bw" ;
         ont:dermal              "yes" ;
         ont:dose_descriptor     "> 2001" ;
@@ -1395,6 +1472,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/16>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:dose_descriptor  "36; 500" ;
         ont:other            "intraperitoneal" ;
         ont:ref_in_dossier   "b71, b73" ;
@@ -1415,6 +1493,7 @@
         a                         ont:Test ;
         ont:additional_info       "test substance: 2-chloro-6-methyl-3-aminophenol hydrochloride (ro 543)" ;
         ont:composition           "test substance dissolved aqua dest" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/5-amino-6-chloro-o-cresol> ;
         ont:concentration         "2.5 --> 9.95" ;
         ont:conclusion            "from these data, the acute median lethal dose (ld50) and its 95% confidence limits to rats of 2-chloro-6-methyl-3-aminophenol hydrochloride were calculated to 1.36 (1.21-1.54) g/kg." ;
         ont:dose_descriptor       "1.36" ;
@@ -1441,6 +1520,7 @@
         a                       ont:Test ;
         ont:additional_info     "test substance: 18247 pyrazol" ;
         ont:chemical_batch_nr   "et046" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/1-hydroxyethyl-4%2C5-diamino%20pyrazole%20sulfate> ;
         ont:conclusion          "the 4 h LC50 value of an aerosol of the test substance was larger than 5.24 g/m³ for both sexes" ;
         ont:dose_level_unit     "g/m³" ;
         ont:dose_levels         "5.24 ± 0.31" ;
@@ -1467,6 +1547,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/87>
         a                          ont:Test ;
         ont:additional_info        "test substance: 1-hydroxy-2-aminobenzene" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/o-aminophenol> ;
         ont:dose_descriptor        "1.052" ;
         ont:dose_level_unit        "mg/kg bw" ;
         ont:dose_levels            "500, 1000, 1250, 2000, 2500" ;
@@ -1485,6 +1566,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/66>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "≈ 2700" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "105" ;
@@ -1493,6 +1575,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/45>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dose_descriptor  "375" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "c23" ;
@@ -1508,6 +1591,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/24>
         a                         ont:Test ;
         ont:additional_info       "named vetyvenyl acetate, no information on ester content" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/vetiveryl%20acetate> ;
         ont:dose_descriptor       "5.0 - 10.0" ;
         ont:dose_level_unit       "ml/kg bw" ;
         ont:dose_levels           "2, 5, 10" ;
@@ -1525,6 +1609,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/140>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/triclosan> ;
         ont:conclusion       "triclosan is not acutely toxic via the oral route of administration, with high oral intubation ld50" ;
         ont:dose_descriptor  "3750 --> 5000" ;
         ont:glp              "no"^^xsd:boolean ;
@@ -1545,6 +1630,7 @@
         ont:body_surface        "≈10% of total body surface" ;
         ont:chemical_batch_nr   "GST 4-11029" ;
         ont:composition         "test substance as a paste in water" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/2%2C6-diamino-3-%28%28pyridin-3-yl%29azo%29pyridine%20> ;
         ont:conclusion          "the LD50 for 2,6-diamino-3-((pyridine-3-yl)azo)pyridine was in excess of 2000 mg/kg bw following a single dermal application. " ;
         ont:dermal              "yes" ;
         ont:dose_descriptor     "2000" ;
@@ -1568,6 +1654,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/95>
         a                   ont:Test ;
+        ont:compound        <http://toxin.vub.be/resource/compound/hc%20yellow%20n°9> ;
         ont:glp             "yes"^^xsd:boolean ;
         ont:ref_in_dossier  "500 mg/kg group included the animal from the sighting test." ;
         ont:target_organ    "general malaise" .
@@ -1587,6 +1674,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/74>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "≈ 500" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "154" ;
@@ -1594,6 +1682,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/53>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dose_descriptor  ">0.005" ;
         ont:exposure_time    "1" ;
         ont:inhalation       "yes" ;
@@ -1608,6 +1697,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/32>
         a                       ont:Test ;
         ont:chemical_batch_nr   "706030517" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/resorcinol> ;
         ont:conclusion          "the maximal non-lethal dose of resorcinol was 200 mg/kg bw." ;
         ont:dose_level_unit     "mg/kg bw" ;
         ont:dose_levels         "200" ;
@@ -1625,6 +1715,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/11>
         a                    ont:Test ;
         ont:additional_info  "ingredient based" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:dose_descriptor  "90-266; 160-1000; 600" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "b6, b10, b33, 57, b71, b73" ;
@@ -1634,6 +1725,7 @@
         a                         ont:Test ;
         ont:additional_info       "test substance: retinyl acetate" ;
         ont:chemical_batch_nr     "6/17" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/vitamin%20a> ;
         ont:conclusion            "low toxicity in acute oral toxicity studies" ;
         ont:dose_descriptor       "4980" ;
         ont:dose_level_unit       "mg/kg bw, first fifth group 10 animals/sex, the highest dosed group 5 animal/sex" ;
@@ -1657,6 +1749,7 @@
         a                          ont:Test ;
         ont:additional_info        "test substance: ro 1082" ;
         ont:chemical_batch_nr      "2495/127" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/4-amino-2-nitrodiphenylamine-2%27-carboxylic%20acid> ;
         ont:conclusion             "the ld50 was reported to be greater than 2000 mg/kg bw." ;
         ont:dose_descriptor        "> 2000" ;
         ont:dose_level_unit        "mg/kg bw" ;
@@ -1696,6 +1789,7 @@
         ont:additional_info     "test substance: fat 65'080/e" ;
         ont:chemical_batch_nr   "krg328-2" ;
         ont:composition         "test substance in  0.5% methylcellulose" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/1%2C3%2C5-triazine%2C%202%2C4%2C6-tris%281%2C1%27-biphenyl%29-4-yl-> ;
         ont:concentration       "49.5 % of the active uv  filter eth50" ;
         ont:conclusion          "under the conditions of this study the median lethal dose of the test substance after oral dosing was found to be greater than 2000 mg test substance/kg bw for female rats, corresponding to greater than 1000 mg eth50/kg bw." ;
         ont:dose_descriptor     ">2000" ;
@@ -1723,6 +1817,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/82>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dermal           "yes" ;
         ont:dose_descriptor  "> 5000" ;
         ont:ref_in_dossier   "23" ;
@@ -1731,6 +1826,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/61>
         a                          ont:Test ;
+        ont:compound               <http://toxin.vub.be/resource/compound/hc%20yellow%20n°%204> ;
         ont:concentration          "10" ;
         ont:conclusion             "the results of this study indicated that the median lethal oral dose (LD5O), was in the region of 1250 to 5000 mg/kg bw in the male rats and in the region of 1250 and 2500 mg/kg bw in females. dosing was then extended to larger groups of rats (five males and five females) in order to set the median lethal dose more precisely. signs of reaction to treatment were not recorded." ;
         ont:dose_descriptor        "1250-5000, 1250-2500 " ;
@@ -1765,6 +1861,7 @@
         ont:age_at_start_of_experiment  "8-12" ;
         ont:age_measuring_unit          "w" ;
         ont:chemical_batch_nr           "LP110" ;
+        ont:compound                    <http://toxin.vub.be/resource/compound/phenylene%20bis-diphenyltriazine> ;
         ont:conclusion                  "no mortality occurred and no abnormal clinical signs were observed at either dose level. body weight gain was not affected by treatment. no abnormal findings were noted in the macroscopic examination. within the experimental conditions of the study, WP30 led to no mortality. the LD50 was estimated to be higher than 2500 mg/kg bw for female wistar rats." ;
         ont:dose_descriptor             "> 2500 mg/kg bw" ;
         ont:dose_level_unit             "mg/kg" ;
@@ -1787,6 +1884,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/19>
         a                    ont:Test ;
         ont:composition      "aqueous substance solution" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/trisodium%20nitrilotriacetate> ;
         ont:concentration    "25" ;
         ont:conclusion       "nta has a low acute toxicity by dermal route" ;
         ont:dermal           "yes" ;
@@ -1801,6 +1899,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/135>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/triclosan> ;
         ont:dose_descriptor  "19" ;
         ont:dose_level_unit  "mg/kg" ;
         ont:dose_levels      "10, 20" ;
@@ -1826,6 +1925,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/114>
         a                          ont:Test ;
         ont:additional_info        "test substance: 4-OH-2,5,6-triamino-pyrimidine sulphate homogenised in corn oil " ;
+        ont:compound               <http://toxin.vub.be/resource/compound/2%2C5%2C6-triamino-4-pyrimidinol%20sulfate> ;
         ont:conclusion             "the LD50 of the test substance administered to rats by the dermal route was > 2000 mg/kg bw" ;
         ont:dermal                 "yes" ;
         ont:dose_descriptor        "> 2000" ;
@@ -1850,6 +1950,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/90>
         a                    ont:Test ;
         ont:composition      "suspension" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/n%2Cn’-bis-%282-hydroxyethyl%29-2-nitro-p-phenylenediamine> ;
         ont:concentration    "50" ;
         ont:dose_level_unit  "g/kg bw" ;
         ont:dose_levels      "5" ;
@@ -1865,6 +1966,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/69>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "2850, 3600" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "98" ;
@@ -1874,6 +1976,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/48>
         a                          ont:Test ;
         ont:composition            "suspension" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:concentration          "5" ;
         ont:dose_descriptor        "0.5" ;
         ont:moribund_or_dead_animals_prior_to_study_termination
@@ -1894,6 +1997,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/27>
         a                    ont:Test ;
         ont:additional_info  "test substance: sodium perborate monohydrate" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/sodium%20perborate%20%20and%20perboric%20acid> ;
         ont:dose_descriptor  "1800" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "interox, 1987a" ;
@@ -1920,6 +2024,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/143>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/acid%20orange%207> ;
         ont:conclusion       "the test substance is of very low acute oral toxicity." ;
         ont:dose_descriptor  "> 10.000 (mouse and rat)" ;
         ont:oral             "yes" ;
@@ -1929,12 +2034,14 @@
         ont:weight           "f (mouse)" .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/122>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/2-amino-4-hydroxyethylaminoanisole%20sulfate> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/101>
         a                       ont:Test ;
         ont:additional_info     "test substance: imexine oax" ;
         ont:chemical_batch_nr   "pil.4X" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/hydroxypropyl%20bis%28n-hydroxyethyl-p-phenylenediamine%29%20HCl> ;
         ont:concentration       "99.8" ;
         ont:conclusion          "a121 was found to be non-toxic via the dermal route" ;
         ont:dermal              "yes" ;
@@ -1956,6 +2063,7 @@
         a                       ont:Test ;
         ont:body_surface        "the back, area of 5 x 6 cm" ;
         ont:chemical_batch_nr   "ar 902" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/hc%20yellow%20n°%2013> ;
         ont:conclusion          "LD50 was reported to be greater than 2000 mg/kg bw" ;
         ont:dermal              "yes" ;
         ont:dose_descriptor     "greater than 2000mg/kg bw/d" ;
@@ -1980,6 +2088,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/77>
         a                    ont:Test ;
         ont:additional_info  "test substance: SOPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "1096" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "279" ;
@@ -1988,6 +2097,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/56>
         a                         ont:Test ;
+        ont:compound              <http://toxin.vub.be/resource/compound/n-methyl-2-pyrrolidone%20%28NMP%29> ;
         ont:dose_descriptor       "3906 (3100-4400)" ;
         ont:oral                  "yes" ;
         ont:ref_in_dossier        "4" ;
@@ -1996,6 +2106,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/35>
         a                         ont:Test ;
+        ont:compound              <http://toxin.vub.be/resource/compound/hydroxypropyl%20p-phenylenediamine%20and%20its%20dihydrochloride%20salt> ;
         ont:conclusion            "the test chemical is moderately toxic after a single oral administration" ;
         ont:dose_descriptor       "300 - 1000" ;
         ont:dose_level_unit       "mg/kg" ;
@@ -2016,6 +2127,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/14>
         a                    ont:Test ;
         ont:additional_info  "ingredient-based study" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:dermal           "yes" ;
         ont:dose_descriptor  " < 2,000  to 10,000" ;
         ont:ref_in_dossier   "b66" ;
@@ -2030,6 +2142,7 @@
         a                         ont:Test ;
         ont:additional_info       "master Log: 74-01B10CuZPT sample 0104241211" ;
         ont:composition           "zinc omadine dispersion (fps)" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:dose_descriptor       "5.08" ;
         ont:dose_level_unit       "mg/l" ;
         ont:dose_levels           "0.68, 1.19 and 2.25 " ;
@@ -2060,6 +2173,7 @@
         ont:additional_info        "test substance: 1-(2-ureidoethyl)-amino-4-nitrobenzene" ;
         ont:chemical_batch_nr      "ch. l4/130" ;
         ont:composition            "test substance suspended in vehicle" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/4-nitrophenyl%20aminoethylurea> ;
         ont:conclusion             "the following ld50’s were calculated using the method of spearman-kärber: ld50 rat (female): 8 g/kg bw, ld50 rat (male): > 8 g/kg bw, ld50 mouse (female): 7.32 g/kg bw." ;
         ont:dose_descriptor        "8, >8; 7.32" ;
         ont:dose_level_unit        "mg/kg bw rats; mouse" ;
@@ -2086,6 +2200,7 @@
         ont:age_measuring_unit          "w" ;
         ont:body_surface                "10% body surface" ;
         ont:chemical_batch_nr           "eth  50/129b" ;
+        ont:compound                    <http://toxin.vub.be/resource/compound/1%2C3%2C5-triazine%2C%202%2C4%2C6-tris%281%2C1%27-biphenyl%29-4-yl-> ;
         ont:conclusion                  "under the experimental conditions of this study, the median lethal dose of the test substance after topical dosing is higher than 2000 mg/kg bw in rats. no signs of toxicity were observed at this dose. " ;
         ont:dermal                      "yes" ;
         ont:dose_level_unit             "mg/kg bw" ;
@@ -2114,6 +2229,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/85>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "> 36" ;
         ont:exposure_time    "4" ;
         ont:particle_size    "vapour" ;
@@ -2132,6 +2248,7 @@
         a                       ont:Test ;
         ont:body_surface        "30cm2" ;
         ont:chemical_batch_nr   "B 3/89" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/hydroxyethyl-2-nitro-p-toluidine> ;
         ont:dermal              "yes" ;
         ont:dose_descriptor     "> 2000" ;
         ont:dose_level_unit     "mg/kg bw" ;
@@ -2153,7 +2270,8 @@
         ont:year                "1990" .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/43>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/methylimidazoliumpropyl%20p-phenylenediamine%20HCl> .
 
 <http://toxin.vub.be/resource/dossier/4-chlororesorcinol>
         a             ont:Report ;
@@ -2165,6 +2283,7 @@
         a                               ont:Test ;
         ont:additional_info             "test substance: labelled ‘compound No. 71-90’, no information on ester content " ;
         ont:age_at_start_of_experiment  "m" ;
+        ont:compound                    <http://toxin.vub.be/resource/compound/vetiveryl%20acetate> ;
         ont:conclusion                  "the acute oral LD50 value was considered to be >5000 mg/kg bw in male wistar rats" ;
         ont:dose_descriptor             "5000" ;
         ont:dose_level_unit             "mg/kg bw" ;
@@ -2201,6 +2320,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/138>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/triclosan> ;
         ont:dose_descriptor  "1090" ;
         ont:glp              "no"^^xsd:boolean ;
         ont:moribund_or_dead_animals_prior_to_study_termination
@@ -2213,7 +2333,8 @@
         ont:year             "1992" .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/117>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/hc%20yellow%20n°%207> .
 
 <http://toxin.vub.be/resource/compound/2-hydroxyethylamino-5-nitroanisole>
         a               ont:Compound ;
@@ -2221,11 +2342,13 @@
         ont:compoundOf  <http://toxin.vub.be/resource/dossier/2-hydroxyethylamino-5-nitroanisole> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/93>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/hydroxyethyl-p-phenylenediamine%20sulfate> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/72>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "≈ 1200, ≈ 1050" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "275" ;
@@ -2244,6 +2367,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/51>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dermal           "yes" ;
         ont:dose_descriptor  "10000" ;
         ont:ref_in_dossier   "c23" ;
@@ -2258,6 +2382,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/30>
         a                    ont:Test ;
         ont:additional_info  "test substance: sodium perborate monohydrate" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/sodium%20perborate%20%20and%20perboric%20acid> ;
         ont:dermal           "yes" ;
         ont:dose_descriptor  "2000" ;
         ont:moribund_or_dead_animals_prior_to_study_termination
@@ -2278,10 +2403,12 @@
         ont:compoundOf  <http://toxin.vub.be/resource/dossier/basic%20red%2051> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/3>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/phenoxyethanol> .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/146>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/acid%20orange%207> ;
         ont:conclusion       "the test substance is of very low acute oral toxicity." ;
         ont:dose_descriptor  "1" ;
         ont:oral             "yes" ;
@@ -2292,6 +2419,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/125>
         a                    ont:Test ;
         ont:additional_info  "test substance: 2-methoxymethyl-p-phenylenediamine sulfate" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/2-methoxy-methyl-p-phenylenediamine%20and%20its%20sulfate%20salt> ;
         ont:conclusion       "LD50 rat (oral gavage): 150 – 200 mg/kg bw (free base: 91.5 – 122.0 mg/kg bw)" ;
         ont:dose_level_unit  "mg/kg bw" ;
         ont:oral             "yes, gavage" ;
@@ -2309,6 +2437,7 @@
         ont:additional_info     "test substance; mip 2985" ;
         ont:body_surface        "on the back from scapula to iliac crest and half way down the flank on each side" ;
         ont:chemical_batch_nr   "029753 a8aa" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/basic%20red%2051> ;
         ont:conclusion          "mildly irritating to the skin when applied dermally at a dose of 2000 mg/kg bw. there were also minor systemic effects. the acute dermal LD50 is greater than 2000 mg/kg bw" ;
         ont:control_groups      "the untreated skin of each animal served as the control." ;
         ont:dermal              "yes" ;
@@ -2332,6 +2461,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/80>
         a                    ont:Test ;
         ont:additional_info  "test substance: POPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "2573, 2118" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "14" ;
@@ -2340,6 +2470,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/59>
         a                         ont:Test ;
+        ont:compound              <http://toxin.vub.be/resource/compound/n-methyl-2-pyrrolidone%20%28NMP%29> ;
         ont:dose_descriptor       "˃ 5.1" ;
         ont:exposure_time         "4" ;
         ont:inhalation            "yes, head only" ;
@@ -2352,6 +2483,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/38>
         a                       ont:Test ;
         ont:additional_info     "test material was to a temperature of 55°C prior to nebulisation" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/polysilicone-15> ;
         ont:conclusion          "no LC50 of Parsol SLX was calculated from this study, but was estimated to be between 0.285 and 1.838 mg/l air." ;
         ont:dose_level_unit     "mg/l" ;
         ont:dose_levels         "0.285 (group 1) and 1.838 mg/l air(group 2)" ;
@@ -2372,6 +2504,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/17>
         a                   ont:Test ;
+        ont:compound        <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:observations    "generally, 25 mg/kg of zpt was fatal to both dogs and monkeys within 24 hours and produced cholinergic-like effects prior to death. doses of 15 and 20 mg/kg produced slight cholinergic stimulation in dogs but death did not result. one of two yorkshire pigs died when injected intravenously with 20 mg/kg and 10 mg/kg was a lethal dose for rabbits. intravenous doses of 5 mg/kg or less produced only transient effects. " ;
         ont:other           "intravenous" ;
         ont:ref_in_dossier  "b2, b7, b72" ;
@@ -2397,6 +2530,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/133>
         a                         ont:Test ;
         ont:additional_info       "test substance: acid black 10b" ;
+        ont:compound              <http://toxin.vub.be/resource/compound/acid%20black%201> ;
         ont:concentration         "30" ;
         ont:dose_level_unit       "g/kg bw" ;
         ont:dose_levels           "3.1, 10, 15, 16, 18" ;
@@ -2410,7 +2544,8 @@
         ont:year                  "1974" .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/112>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/2%2C4-diaminophenoxyethanol%20dihydrochloride%20and%20sulfate> .
 
 <http://toxin.vub.be/resource/compound/polysilicone-15>
         a               ont:Compound ;
@@ -2432,6 +2567,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/88>
         a                          ont:Test ;
         ont:composition            "suspension" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/o-aminophenol> ;
         ont:concentration          "5" ;
         ont:dose_descriptor        "1.3" ;
         ont:moribund_or_dead_animals_prior_to_study_termination
@@ -2445,6 +2581,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/67>
         a                    ont:Test ;
         ont:additional_info  "test substance: OPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "2980" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "150" ;
@@ -2459,6 +2596,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/46>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dose_descriptor  "1550" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "c43" ;
@@ -2474,6 +2612,7 @@
         a                          ont:Test ;
         ont:additional_info        "test substance: toluene-2,5-diamine" ;
         ont:composition            "diluted in aqueoys sodium sulphite (0.05%)" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/toluene-2%2C5-diamine%20and%20its%20sulfate> ;
         ont:concentration          "10" ;
         ont:dose_descriptor        "102" ;
         ont:dose_level_unit        "mg/kg bw" ;
@@ -2500,6 +2639,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/141>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/triclosan> ;
         ont:conclusion       "the data indicate that triclosan is not acutely toxic via the dermal route of administration." ;
         ont:dermal           "dermal" ;
         ont:dose_descriptor  "> 9300" ;
@@ -2509,7 +2649,8 @@
         ont:year             "1989" .
 
 <http://toxin.vub.be/resource/test/acutetoxicity/120>
-        a       ont:Test .
+        a             ont:Test ;
+        ont:compound  <http://toxin.vub.be/resource/compound/2%2C6-dihydroxyethylaminotoluene> .
 
 <http://toxin.vub.be/resource/dossier/1-hydroxyethyl-4%2C5-diamino%20pyrazole%20sulfate>
         a             ont:Report ;
@@ -2525,6 +2666,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/96>
         a                          ont:Test ;
         ont:composition            "suspension" ;
+        ont:compound               <http://toxin.vub.be/resource/compound/hc%20yellow%20n°%202> ;
         ont:concentration          "10" ;
         ont:dose_level_unit        "mg/kg bw" ;
         ont:dose_levels            "625, 1250, 2500" ;
@@ -2550,6 +2692,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/75>
         a                    ont:Test ;
         ont:additional_info  "test substance: SOPP" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/o-phenylphenol%2C%20sodium%20o-phenylphenate%20and%20potassium%20o-phenylphenate> ;
         ont:dose_descriptor  "1250" ;
         ont:oral             "yes" ;
         ont:ref_in_dossier   "85" ;
@@ -2563,6 +2706,7 @@
 
 <http://toxin.vub.be/resource/test/acutetoxicity/54>
         a                    ont:Test ;
+        ont:compound         <http://toxin.vub.be/resource/compound/p-aminophenol> ;
         ont:dose_descriptor  " >5.91,  >3.42" ;
         ont:exposure_time    "1.3,  4 " ;
         ont:inhalation       "yes" ;
@@ -2573,6 +2717,7 @@
         a                       ont:Test ;
         ont:additional_info     "test substance: 4-formyl-1-methylquinolonium-p-toluenesulfonate in distilled water" ;
         ont:chemical_batch_nr   "Moe-HM-6116-190" ;
+        ont:compound            <http://toxin.vub.be/resource/compound/quinolinium%2C%204-formyl-1-methyl-%2C%20salt%20with%204-methylbenzene%20sulfonic%20acid%20%281%3A1%29> ;
         ont:conclusion          "during the observation period of 14 days no mortality and clinical-toxicological findings were seen. the body weights were within the normal range. no macroscopic findings were recorded at necropsy. the LD50 is greater than 2000 mg/kg bw." ;
         ont:dose_descriptor     "> 2000" ;
         ont:dose_level_unit     "mg/kg bw" ;
@@ -2591,6 +2736,7 @@
 <http://toxin.vub.be/resource/test/acutetoxicity/12>
         a                    ont:Test ;
         ont:additional_info  "product derived" ;
+        ont:compound         <http://toxin.vub.be/resource/compound/zinc%20pyrithione> ;
         ont:conclusion       "LD50 in rat for a cream shampoo formulation: 2.5 g/kg; for a lotion shampoo: 3.0 ml/kg" ;
         ont:dose_descriptor  "2.5; 3.0" ;
         ont:oral             "yes" ;

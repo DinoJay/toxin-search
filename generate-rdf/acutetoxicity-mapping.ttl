@@ -30,7 +30,7 @@
     ] ;
 .
 
-<#CompountTriplesMap>
+<#CompoundTriplesMap>
     rr:logicalTable [ rr:sqlQuery "SELECT ROWNUM() AS ID, * FROM ACUTETOXICITY" ] ;
 
     rr:subjectMap [
@@ -62,6 +62,16 @@
         rr:template "http://toxin.vub.be/resource/test/acutetoxicity/{ID}" ;
         rr:class ont:Test ;
     ] ;
+
+    ### BEGIN LINK WITH COMPOUND
+    rr:predicateObjectMap [
+        rr:predicate ont:compound ;
+        rr:objectMap [ 
+            rr:parentTriplesMap <#CompoundTriplesMap> ; 
+            rr:joinCondition [ rr:child "ID" ; rr:parent "ID" ; ] ;
+        ] ;
+    ] ;
+    ### END LINK WITH COMPOUND
     
     # type of study is difficult here
 

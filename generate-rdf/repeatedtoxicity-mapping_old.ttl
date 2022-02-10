@@ -31,20 +31,6 @@
     ] ;
 .
 
-<#CompoundTriplesMap>
-    rr:logicalTable [ rr:sqlQuery "SELECT ROWNUM() AS ID, * FROM REPEATEDTOXICITY" ] ;
-
-    rr:subjectMap [
-        rr:template "http://toxin.vub.be/resource/compound/{DOSSIER}" ;
-        rr:class ont:Compound ;
-    ] ;
-
-    rr:predicateObjectMap [
-        rr:predicate rdfs:label ;
-        rr:objectMap [ rr:column "DOSSIER" ; ] ;
-    ] ;
-.
-
 <#TestTriplesMap>
     # todo: \"type of study ( in vivo, in vitro, in silico, in chemico\" -> camelcase
     rr:logicalTable [ rr:sqlQuery """
@@ -70,14 +56,14 @@
     """ ] ;
 
     ### BEGIN LINK WITH COMPOUND
-    rr:predicateObjectMap [
-        rr:predicate ont:compound ;
-        rr:objectMap [ 
-            rr:parentTriplesMap <#CompoundTriplesMap> ; 
-            rr:joinCondition [ rr:child "ID" ; rr:parent "ID" ; ] ;
+        rr:predicateObjectMap [
+            rr:predicate ont:compound ;
+            rr:objectMap [ 
+                rr:parentTriplesMap <#CompoundTriplesMap> ; 
+                rr:joinCondition [ rr:child "ID" ; rr:parent "ID" ; ] ;
+            ] ;
         ] ;
-    ] ;
-    ### END LINK WITH COMPOUND
+        ### END LINK WITH COMPOUND
 
     rr:subjectMap [
         rr:template "http://toxin.vub.be/resource/test/repeatedtoxicity/{ID}" ;
@@ -88,11 +74,6 @@
         rr:predicate rdf:type ;
         rr:objectMap [ rr:template "http://ontologies.vub.be/oecd#{TYPE}" ; ] ;
     ] ;
-
-    rr:predicateObjectMap [
-        rr:predicate ont:oecd_test_nr ;
-        rr:objectMap [ rr:column "\"OECD test nr\"" ; ] ;
-    ] ; 
 
     rr:predicateObjectMap [
         rr:predicate ont:observations ;
@@ -187,7 +168,7 @@
 
     rr:predicateObjectMap [
         # CLEANUP ONTOLOGY
-        rr:predicate ont:particle_size;
+        rr:predicate ont:particle_size_and_procedure ;
         rr:objectMap [ rr:column "\"particle size and procedure\"" ; ] ;
     ] ; 
 
@@ -209,7 +190,7 @@
 
     rr:predicateObjectMap [
         # CLEANUP ONTOLOGY, NORMALIZE WITH IRIS
-        rr:predicate ont:species;
+        rr:predicate ont:species_strain ;
         rr:objectMap [ rr:column "\"species/strain\"" ; ] ;
     ] ; 
 
@@ -263,7 +244,7 @@
 
     rr:predicateObjectMap [
         # TODO: CLEANUP
-        rr:predicate ont:dose_level_unit ;
+        rr:predicate ont:dose_levels_unity ;
         rr:objectMap [ rr:column "\"dose level unity (or extra info)\"" ; ] ;
     ] ; 
 
@@ -282,7 +263,7 @@
     rr:predicateObjectMap [
         # TODO: CLEANUP
         # HAS TO BE BOOLEAN AND OTHER PREDICATE (oral technique)
-        rr:predicate ont:oral ;
+        rr:predicate ont:dose_levels_unity ;
         rr:objectMap [ rr:column "\"oral ( gavage, diet, water, intubation)\"" ; ] ;
     ] ; 
 
@@ -343,7 +324,7 @@
 
     rr:predicateObjectMap [
         # TODO: CLEANUP
-        rr:predicate ont:rinsing_procedure ;
+        rr:predicate ont:rinsing ;
         rr:objectMap [ rr:column "RINSING" ; ] ;
     ] ; 
 
@@ -362,7 +343,7 @@
     rr:predicateObjectMap [
         # TODO: CLEANUP
         # NEEDS TO BE NORMALIZED!!!
-        rr:predicate ont:exposure_time ;
+        rr:predicate ont:exposure_period ;
         rr:objectMap [ rr:column "\"exposure period + recovery period days\"" ; ] ;
     ] ; 
 
@@ -374,19 +355,19 @@
     ] ; 
 
     rr:predicateObjectMap [
-        rr:predicate ont:glp ;
+        rr:predicate ont:GLP ;
         rr:objectMap [ rr:column "ISGLP" ; rr:datatype xsd:boolean ; ] ;
     ] ; 
 
     rr:predicateObjectMap [
         # TODO: CLEANUP
-        rr:predicate ont:scss_comment_to_test ;
+        rr:predicate ont:SCCS_comment_to_test ;
         rr:objectMap [ rr:column "\"SCCS comment to test\"" ; ] ;
     ] ; 
 
     rr:predicateObjectMap [
         # TODO: CLEANUP
-        rr:predicate ont:ref_in_dossier ;
+        rr:predicate ont:Ref_in_dossier ;
         rr:objectMap [ rr:column "\"Ref. in dossier\"" ; ] ;
     ] ; 
 
@@ -398,7 +379,7 @@
 
     rr:predicateObjectMap [
         # TODO: CLEANUP
-        rr:predicate ont:control_groups ;
+        rr:predicate ont:control_group ;
         rr:objectMap [ rr:column "\"control group + satellite group\"" ; ] ;
     ] ; 
 
