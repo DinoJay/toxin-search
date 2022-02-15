@@ -8,35 +8,30 @@
 	export let onClick;
 
 	const data = [
-		{ state: 'Acute Toxicity', endpoint: 'acute-toxicity' },
-		{ state: 'Irritation and corrosivity' },
-		{ state: 'Skin sensitisation' },
-		{ state: 'Organ-specific toxicity' },
-		{ state: 'Repeated dose toxicity', endpoint: 'repeated-toxicity' },
-		{ state: 'Reproductive toxicitya' },
-		{ state: 'Mutagenicity / genotoxicity' },
-		{ state: 'Carcinogenicity' },
-		{ state: 'Photo-induced toxicity' },
-		{ state: 'New Hampshire' },
-		{ state: 'Human data' },
-		{ state: 'Special investigations' },
-		{ state: 'Absorption' },
-		{ state: 'Toxicokinetics' },
-		{ state: 'Distribution' },
-		{ state: 'Metabolism' },
-		{ state: 'Extraction' }
+		{ label: 'Acute Toxicity', endpoint: 'acute-toxicity' },
+		{ label: 'Irritation and corrosivity' },
+		{ label: 'Skin sensitisation' },
+		{ label: 'Organ-specific toxicity' },
+		{ label: 'Repeated dose toxicity', endpoint: 'repeated-toxicity' },
+		{ label: 'Reproductive toxicitya' },
+		{ label: 'Mutagenicity / genotoxicity' },
+		{ label: 'Carcinogenicity' },
+		{ label: 'Photo-induced toxicity' },
+		{ label: 'New Hampshire' },
+		{ label: 'Human data' },
+		{ label: 'Special investigations' },
+		{ label: 'Absorption' },
+		{ label: 'Toxicokinetics' },
+		{ label: 'Distribution' },
+		{ label: 'Metabolism' },
+		{ label: 'Extraction' }
 	];
 
-	const extract = (item) => item.state;
 	let val = '';
 	let open = true;
-	$: valInList = !!data.find((d) => d.state.toLowerCase() === val.toLowerCase());
+	$: valInList = !!data.find((d) => d.label.toLowerCase() === val.toLowerCase());
 
-	const getEndpoint = () => {
-		const ret = data.find((d) => d.state.toLowerCase() === val.toLowerCase());
-		return ret || 'acute-toxicity';
-	};
-	$: endpoint = getEndpoint();
+	$: endpoint = data.find((d) => d.label.toLowerCase() === val.toLowerCase())?.endpoint;
 
 	const sparqlQuery = ` 
 		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -192,7 +187,7 @@
 					/>
 					<datalist id="outcomes">
 						{#each data as d}
-							<option value={d.state}>{d.state}</option>
+							<option value={d.label}>{d.label}</option>
 						{/each}
 					</datalist>
 				</div>
@@ -233,7 +228,7 @@
 				class="mt-3 border px-2 py-1 w-full {!valInList && 'opacity-50'}"
 				disabled={!valInList}
 				on:click={() => {
-					promise = fetch(constructQuery('repeated-toxicity', sparqlQuery))
+					promise = fetch(constructQuery(endpoint, sparqlQuery))
 						.then((res) => res.json())
 						.then((res) => ({
 							...res,

@@ -78,7 +78,7 @@ const reliability_of_test_keys = [
     'control_groups',
     'glp',
     'klimisch_score',
-    'Ref_in_dossier'
+    'ref_in_dossier'
 ];
 
 export default (obj) => {
