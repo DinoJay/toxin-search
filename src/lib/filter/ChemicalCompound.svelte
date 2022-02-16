@@ -8,8 +8,6 @@
 	import Expandable from '$lib/Expandable.svelte';
 	import { casRegex, smilesRegex } from '$lib/chemRegexes';
 
-	import startCase from 'lodash.startcase';
-
 	let inputVal = 'C1=CC(=C(C=C1O)O)O';
 	// let imgPromise = null;
 	let compound = null;
@@ -71,7 +69,10 @@
 
 				console.log('sparqlQueryArg', sparqlQueryArg);
 
-				return fetch(constructQuery('chemical-identity', makeSparqlQuery(sparqlQueryArg)))
+				return fetch(constructQuery('chemical-identity', makeSparqlQuery(sparqlQueryArg)), {
+					mode: 'cors',
+					headers: { 'Access-Control-Allow-Origin': '*' }
+				})
 					.then((res) => res.json())
 					.then((res) => ({
 						...res,
