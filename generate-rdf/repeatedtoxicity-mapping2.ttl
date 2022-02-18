@@ -31,7 +31,7 @@
     ] ;
 .
 
-<#CompountTriplesMap>
+<#CompoundTriplesMap>
     rr:logicalTable [ rr:sqlQuery "SELECT ROWNUM() AS ID, * FROM REPEATEDTOXICITY" ] ;
 
     rr:subjectMap [
@@ -76,6 +76,11 @@
             * 
         FROM REPEATEDTOXICITY
     """ ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rr:template "{DOSSIER} Test ({ID})" ; rr:termType rr:Literal ; ] ;
+    ] ;
 
     rr:subjectMap [
         rr:template "http://toxin.vub.be/resource/test/repeatedtoxicity/{ID}" ;

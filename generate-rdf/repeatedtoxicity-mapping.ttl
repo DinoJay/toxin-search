@@ -85,6 +85,11 @@
     ] ;
 
     rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rr:template "{DOSSIER} Test ({ID})" ; rr:termType rr:Literal ;] ;
+    ] ;
+
+    rr:predicateObjectMap [
         rr:predicate rdf:type ;
         rr:objectMap [ rr:template "http://ontologies.vub.be/oecd#{TYPE}" ; ] ;
     ] ;
