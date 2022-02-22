@@ -1523,7 +1523,7 @@
 
 <http://toxin.vub.be/resource/test/repeatedtoxicity/47>
         a                          ont:Test_Repeated_Toxicity_in_vivo_Non_OECD , ont:Test ;
-        ont:additional_info        "test substance: toluene-2,5-diamine sulfate" , "peer review of two external experts: the histological slides from relevant tissues (diaphragm, skeletal muscle, tongue and heart) from this study were reviewed by two independent pathologists. both pathologists agreed that treatment-related myofiber necrosis, degeneration, and/or inflammatory change were present in skeletal muscle, tongue, and diaphragm of both males and females given 30 or 60 mg/kg bw/d in this study and that the noael for muscle degenerative change in this study was 15 mg/kg bw/d. ref.: 4, 5 (subm 3)" ;
+        ont:additional_info        "peer review of two external experts: the histological slides from relevant tissues (diaphragm, skeletal muscle, tongue and heart) from this study were reviewed by two independent pathologists. both pathologists agreed that treatment-related myofiber necrosis, degeneration, and/or inflammatory change were present in skeletal muscle, tongue, and diaphragm of both males and females given 30 or 60 mg/kg bw/d in this study and that the noael for muscle degenerative change in this study was 15 mg/kg bw/d. ref.: 4, 5 (subm 3)" , "test substance: toluene-2,5-diamine sulfate" ;
         ont:administration_scheme  "once daily" ;
         ont:chemical_batch_nr      "ch 1143" ;
         ont:compound               <http://toxin.vub.be/resource/compound/toluene-2%2C5-diamine%20and%20its%20sulfate> ;

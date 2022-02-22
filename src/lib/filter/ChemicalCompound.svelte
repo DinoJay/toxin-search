@@ -69,10 +69,7 @@
 
 				console.log('sparqlQueryArg', sparqlQueryArg);
 
-				return fetch(constructQuery('chemical-identity', makeSparqlQuery(sparqlQueryArg)), {
-					mode: 'cors',
-					headers: { 'Access-Control-Allow-Origin': '*' }
-				})
+				return fetch(constructQuery('chemical-identity', makeSparqlQuery(sparqlQueryArg)))
 					.then((res) => res.json())
 					.then((res) => ({
 						...res,
